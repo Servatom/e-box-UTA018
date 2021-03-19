@@ -17,7 +17,7 @@ class ItemType{
         this->deposit = deposit;
     }
     
-    void setCostPD(double costPerDay){
+    void setCostPerDay(double costPerDay){
         this->costPerDay = costPerDay;
     }
     

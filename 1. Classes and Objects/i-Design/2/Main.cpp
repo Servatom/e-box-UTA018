@@ -21,7 +21,9 @@ int main(){
     
     cout<<"Enter cost Per Day:"<<endl;
     cin>>costPerDay;
-    item.setCostPD(costPerDay);
+    item.setCostPerDay(costPerDay);
     
     item.display();
+
+    return 0;
 }
