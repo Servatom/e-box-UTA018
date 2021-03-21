@@ -46,7 +46,7 @@ int main(){
             cin>>type;
 
             cout<<"Enter the item vendor:\n";
-            getline(cin, t);
+            cin.ignore();
             getline(cin, vendor);
 
             Item item(id, name, type, vendor);
