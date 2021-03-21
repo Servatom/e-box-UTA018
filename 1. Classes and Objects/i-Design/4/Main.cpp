@@ -36,6 +36,6 @@ int main(){
     }
 
     cout<<"Purchase Details :"<<endl;
-    hist[1].display(hist, number_of_customers);
+    hist[0].display(hist, number_of_customers);
     return 0;
 }
