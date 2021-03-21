@@ -8,15 +8,16 @@ class Purchase{
         string userName;
         int countOfItems;
         float amount;
+        
+    public:
         float static totalAmt;
         int static totalCountOfItems;
-    public:
         string getuserName(){
             return userName;
         }
 
         void setUserName(string a){
-            this->userName = a;
+            userName = a;
         }
 
         int getCountOfItems(){
@@ -24,32 +25,20 @@ class Purchase{
         }
 
         void setCountOfItems(int b){
-            this->countOfItems = b;
+            countOfItems = b;
+            totalCountOfItems =totalCountOfItems + b;
         }
 
         float getAmount(){
             return amount;
         }
 
-        void setamount(float c){
-            this->amount = c;
+        void setAmount(float c){
+            amount = c;
+            totalAmt=totalAmt+c;
         }
 
-        float getTotalAmt(){
-            return totalAmt;
-        }
-
-        void setTotalAmt(float d){
-            totalAmt = d;
-        }
-
-        int getTotalCountOfItems(){
-            return totalCountOfItems;
-        }
-
-        void settotalCountOfItems(int e){
-            totalCountOfItems = e;
-        }
+        
 
         void display (Purchase obj[], int n){
             for(int i = 0; i < n; i++){
@@ -58,7 +47,7 @@ class Purchase{
                 cout<<"Purchase amount :"<<obj[i].getAmount()<<endl;
             }
 
-            cout<<"Total Amount Received :"<<getTotalAmt()<<endl;
-            cout<<"Total Number of Items sold :"<<getTotalCountOfItems()<<endl;
+            cout<<"Total Amount Received :"<<totalAmt<<endl;
+            cout<<"Total Number of Items sold :"<<totalCountOfItems<<endl;
         }
 };
