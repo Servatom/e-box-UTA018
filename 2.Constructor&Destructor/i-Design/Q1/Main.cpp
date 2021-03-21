@@ -6,58 +6,65 @@ using namespace std;
 
 int main(){
     int choice;
-    char ch = 'y';
-    cout<<"\nMenu:";
-    cout<<"\n1.Electronics";
-    cout<<"\n2.Others";
-    cout<<"\nEnter your choice:\n";
+
+    cout<<"Menu:"<<endl;
+    cout<<"1.Electronics"<<endl;
+    cout<<"2.Others"<<endl;
+
+    cout<<"Enter your choice:\n";
     cin>>choice;
-    switch (choice){
-        case 1:
-        {
-            string name, id, type, vendor;
-            type = "Electricals";
-            vendor = "Arun electricals";
-            cout<<"Enter details of the item"<<endl;
 
-            cout<<"Enter item id:"<<endl;
-            cin>>id;
+    
+    switch (choice)
+    {
+    case 1:{
+        cout<<"Enter details of the item"<<endl;
+        string name;
+        string id;
+        string type = "Electricals";
+        string vendor = "Arun electricals";
 
-            cout<<"Enter the item name:"<<endl;
-            cin>>name;
+        cout<<"Enter item id:"<<endl;
+        cin>>id;
+        cin.ignore();
 
-            Item item(id, name, type, vendor);
-            item.display();
+        cout<<"Enter the item name:"<<endl;
+        getline(cin, name);
 
-            break;
-        }
+        Item item(id, name, type, vendor);
 
-        case 2:
-        {
-            string name, id, type, vendor, t;
-            cout<<"Enter details of the item"<<endl;
-            cout<<"Enter item id:"<<endl;
-            cin>>id;
-            
-            cout<<"Enter the item name:"<<endl; 
-            cin>>name;
+        item.display();
+        break;
+    }
 
-            cout<<"Enter the item type:"<<endl;
-            cin>>type;
+    case 2:{
+        cout<<"Enter details of the item"<<endl;
+        string name;
+        string id;
+        string type;
+        string vendor;
 
-            cout<<"Enter the item vendor:\n";
-            cin.ignore();
-            getline(cin, vendor);
+        cout<<"Enter item id:\n";
+        cin>>id;
+        cin.ignore();
+        
+        cout<<"Enter the item name:\n";
+        getline(cin, name);
 
-            Item item(id, name, type, vendor);
-            item.display();
+        cout<<"Enter the item type:\n";
+        getline(cin, type);
 
-            break;
-        }
+        cout<<"Enter the item vendor:\n";
+        getline(cin, vendor);
 
-        default:
-            cout<<"Invalid choice"<<endl;
-            break;
+        Item item(id, name, type, vendor);
+
+        item.display();
+        break;      
+    }
+    default:
+        cout<<"Invalid choice"<<endl;
+        break;
     }
 
     return 0;

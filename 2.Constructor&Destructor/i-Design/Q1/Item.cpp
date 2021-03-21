@@ -1,30 +1,34 @@
-#include <iostream>
 #include <string>
+#include <iostream>
 
 using namespace std;
 
 class Item{
     private:
-        string itemId;
+        string itemID;
         string itemName;
         string itemType;
         string itemVendor;
 
     public:
         string getItemId(){
-            return this->itemId;
+            return itemID;
         }
 
         string getItemName(){
-            return this->itemName;
+            return itemName;
         }
 
         string getItemVendor(){
-            return this->itemVendor;
+            return itemVendor;
+        }
+
+        string getItemType(){
+            return itemType;
         }
 
         void setItemId(string id){
-            itemId = id;
+            itemID = id;
         }
 
         void setItemName(string name){
@@ -39,23 +43,19 @@ class Item{
             itemVendor = vendor;
         }
 
-
-
-        //Constructors
         Item(){};
-
-        Item(string itemId, string itemName, string itemType, string itemVendor){
-            this->itemId = itemId;
-            this->itemName = itemName;
-            this->itemType = itemType;
-            this->itemVendor = itemVendor;
+        Item(string id, string name, string type, string vendor){
+            setItemId(id);
+            setItemName(name);
+            setItemType(type);
+            setitemVendor(vendor);
         }
 
         void display(){
             cout<<"Item details"<<endl;
-            cout<<"Item id: "<<itemId<<endl;
-            cout<<"Item name: "<<itemName<<endl;
-            cout<<"Item type: "<<itemType<<endl;
-            cout<<"Item vendor: "<<itemVendor<<endl;
+            cout<<"Item id: "<<getItemId()<<endl;
+            cout<<"Item name: "<<getItemName()<<endl;
+            cout<<"Item type: "<<getItemType()<<endl;
+            cout<<"Item vendor: "<<getItemVendor()<<endl;
         }
 };
