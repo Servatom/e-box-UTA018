@@ -24,18 +24,18 @@ int main(){
 
         cout<<"Enter the No of Items purchased :"<<endl;
         cin>>no_items;
-
+        
         cout<<"Enter the purchase amount :"<<endl;
         cin>>purchase_amt;
+       
 
         hist[i].setUserName(userName);
         hist[i].setCountOfItems(no_items);
-        hist[i].setamount(purchase_amt);
-        hist[i].settotalCountOfItems(hist[i].getTotalCountOfItems() + no_items);
-        hist[i].setTotalAmt(hist[i].getTotalAmt() + purchase_amt);
+        hist[i].setAmount(purchase_amt);
+
     }
 
     cout<<"Purchase Details :"<<endl;
-    hist[0].display(hist, number_of_customers);
+    hist[1].display(hist, number_of_customers);
     return 0;
 }
