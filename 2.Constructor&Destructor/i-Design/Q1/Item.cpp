@@ -1,34 +1,33 @@
-#include <string>
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 class Item{
     private:
-        string itemID;
+        string itemId;
         string itemName;
         string itemType;
         string itemVendor;
 
     public:
         string getItemId(){
-            return itemID;
+            return this->itemId;
         }
-
-        string getItemName(){
-            return itemName;
-        }
-
-        string getItemVendor(){
-            return itemVendor;
-        }
-
         string getItemType(){
             return itemType;
         }
 
+        string getItemName(){
+            return this->itemName;
+        }
+
+        string getItemVendor(){
+            return this->itemVendor;
+        }
+
         void setItemId(string id){
-            itemID = id;
+            itemId = id;
         }
 
         void setItemName(string name){
@@ -43,19 +42,26 @@ class Item{
             itemVendor = vendor;
         }
 
-        Item(){};
-        Item(string id, string name, string type, string vendor){
-            setItemId(id);
-            setItemName(name);
-            setItemType(type);
-            setitemVendor(vendor);
+
+
+        //Constructors
+        Item(){
+        itemType="Electricals";
+        itemVendor="Arun electricals";
+        };
+
+        Item(string itemId, string itemName, string itemType, string itemVendor){
+            this->itemId = itemId;
+            this->itemName = itemName;
+            this->itemType = itemType;
+            this->itemVendor = itemVendor;
         }
 
         void display(){
             cout<<"Item details"<<endl;
-            cout<<"Item id: "<<getItemId()<<endl;
-            cout<<"Item name: "<<getItemName()<<endl;
-            cout<<"Item type: "<<getItemType()<<endl;
-            cout<<"Item vendor: "<<getItemVendor()<<endl;
+            cout<<"Item id: "<<itemId<<endl;
+            cout<<"Item name: "<<itemName<<endl;
+            cout<<"Item type: "<<itemType<<endl;
+            cout<<"Item vendor: "<<itemVendor<<endl;
         }
 };
