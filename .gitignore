@@ -40,3 +40,8 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+#VS code generated
+launch.json
+settings.json
+tasks.json
