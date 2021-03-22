@@ -16,7 +16,7 @@ class ItemTypeBO{
         }
 
         int searchItemTypeByName(ItemType *itemType, int n, string searchName){
-            for(int i = 0; i < n; i++){
+            for(int i = 0; i < n; i++, itemType++){
                 if(itemType->getItemName() == searchName){
                     return 1;
                 }
