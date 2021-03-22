@@ -1,37 +1,64 @@
 #include <iostream>
 #include<string.h>
-#include "User.cpp"
 using namespace std;
-string validate(string uname,string pword){
-    int flag=0;
-    User u1;
-    User *u = u1.getUserDetails();
-    for(int i=0;i<5;i++)
-    {
-        if(u[i].getUserName()==uname)
+class User{
+    private:
+        string name;
+        string userName;
+        string password;
+    public:
+        User()
         {
-            flag=1;
-            if(u[i].getPassword()==pword)
-            return u[i].getName();
-            else return "No";
+            
         }
-        
-    }
-    if(flag==0)
-    return "No";
-}
-int main() {
-    User u;
-    string name,uname,pword;
-    cout<<"Enter name:"<<endl;
-    getline(cin,name);
-    u.setName(name);
-    cout<<"Enter the username:"<<endl;
-    getline(cin,uname);
-    u.setUserName(uname);
-    cout<<"Enter the password:"<<endl;
-    cin>>pword;
-    u.setPassword(pword);
-    u.display(validate(uname,pword));
-    return 0;
-}
+        User(string n,string un,string p)
+        {
+            name=n;
+            userName=un;
+            password=p;
+        }
+        void setName(string n)
+        {
+            name=n;
+        }
+        void setUserName(string un)
+        {
+            userName=un;
+        }
+        void setPassword(string p)
+        {
+            password=p;
+        }
+        string getName()
+        {
+            return name;
+        }
+        string getUserName()
+        {
+            return userName;
+        }
+        string getPassword()
+        {
+            return password;
+        }
+    
+        User * getUserDetails(){
+            User *user = new User[5];
+            user[0]= User("Abi","Abinaya","abi123");
+            user[1]= User("Arun","Arunsoorya","arun456");
+            user[2]= User("Sbi","Sbiharan","sbi789");
+            user[3]= User("Sidhu","Siddarth","sid123");
+            user[4]= User("Vivi","viveka","vivi456");
+            return user;
+        }
+      	//Fill code
+          
+        void display(string s) {
+            if(s=="No")
+            cout<<"Invalid username/password";
+            else
+            cout<<"Hiii..."<<s<<" !! Welcome to the event!!! ";
+            
+        }
+        friend string validate(string uname,string pword); 
+};
