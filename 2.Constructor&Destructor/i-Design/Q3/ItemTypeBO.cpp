@@ -15,9 +15,9 @@ class ItemTypeBO{
             return item_type;
         }
 
-        int searchItemTypeByName(ItemType itemType[], int n, string searchName){
+        int searchItemTypeByName(ItemType *itemType, int n, string searchName){
             for(int i = 0; i < n; i++){
-                if(itemType[i].getItemName() == searchName){
+                if(itemType->getItemName() == searchName){
                     return 1;
                 }
                 else{
