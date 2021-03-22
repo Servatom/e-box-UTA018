@@ -5,27 +5,28 @@
 using namespace std;
 
 int main(){
-    int number_of_types;
-    string searchType;
+    int n;
+    
     cout<<"Enter the number of Itemtypes:"<<endl;
-    cin>>number_of_types;
+    cin>>n;
 
-    if(number_of_types < 0){
+    if(n < 0){
         cout<<"Invalid Number"<<endl;
-        return 1;
+        return 0;
     }
     
-    ItemType itemTypes[number_of_types];
+    ItemType itemTypes[n];
     ItemTypeBO itemTypeBO;
 
-    for(int i = 0; i < number_of_types; i++){
-        string name;
-        double deposit;
-        double costPerDay;
+    string name;
+    double deposit;
+    double costPerDay;
 
+    for(int i = 0; i < n; i++){
+        
         cout<<"Enter details of item type "<<i+1<<endl;
+        cout<<"Enter the Itemtype name:"<<endl;
         cin.ignore();
-        cout<<"Enter the Itemtype name:\n";
         getline(cin, name);
 
         cout<<"Enter the deposit:"<<endl;
@@ -34,14 +35,16 @@ int main(){
         cout<<"Enter cost per day:"<<endl;
         cin>>costPerDay;
 
-        itemTypes[i] = itemTypeBO.createItem(name, deposit, costPerDay);
+        itemTypes[i] = itemTypeBO.createItemType(name, deposit, costPerDay);
     }
     
+    
+    string searchType;
+    cout<<"Enter the item name to be searched:"<<endl;
     cin.ignore();
-    cout<<"Enter the item name to be searched:\n";
     getline(cin, searchType);
 
-    if(itemTypeBO.searchItemTypeByName(itemTypes, number_of_types, searchType)){
+    if(itemTypeBO.searchItemTypeByName(itemTypes, n, searchType)){
         cout<<"ItemType found"<<endl;
     }
     else{
