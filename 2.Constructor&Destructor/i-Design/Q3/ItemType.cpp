@@ -21,16 +21,13 @@ class ItemType{
         double getCostPerDay(){
             return costPerDay;
         }
-
-        void setItemName(string itemName){
-            this->itemName = itemName;
-        }
-
-        void setItemDeposit(double itemDeposit){
-            this->itemDeposit = itemDeposit;
-        }
-
-        void setCostPerDay(double costperday){
-            this->costPerDay = costPerDay;
-        }
+	    void setItemName(string Name1){
+	        this->itemName=Name1;
+	    }
+	    void setItemDeposit(double Deposit1){
+	        this->itemDeposit=Deposit1;
+	    }
+	    void setCostPerDay(double costperday1){
+  	        this->costPerDay=costperday1;
+	    }
 };
