@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <iomanip> //For fixed<<setprecision(<n>) To print a decimal number mandatorily 
+#include <iomanip> //For fixed<<setprecision(<n>) To print a decimal number mandatorily manip = manipulators
 
 using namespace std;
 
@@ -26,6 +26,7 @@ class Donor{
             cout<<age<<endl;
             cout<<height<<endl;
             cout<<fixed<<setprecision(1)<<weight<<endl; //<<fixed<<setprecision(1) tells compiler to mandatorily print 1 decimal place
+            //setfill("<caharcter>") => extra zeros filled with that character
             cout<<no_of_units_donated<<endl;
         }
 };
