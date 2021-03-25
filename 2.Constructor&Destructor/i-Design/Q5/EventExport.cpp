@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class EventExport: public Event{
+class EventExport{
     public:
         void exportCSVFormat(Event *e, int num){
             for(int i = 0; i < num; i++){
