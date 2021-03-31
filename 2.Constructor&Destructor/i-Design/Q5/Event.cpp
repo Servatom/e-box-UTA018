@@ -48,21 +48,21 @@ class Event{
         }
 
         string getName(){
-            return name;
+            return this->name;
         }
 
         string getDetail(){
-            return details;
+            return this->details;
         }
 
         string getType(){
-            return type;
+            return this->type;
         }
         string getOrganiser(){
-            return organiser;
+            return this->organiser;
         }
         int getAttendeesCount(){
-            return attendeesCount;
+            return this->attendeesCount;
         }
         double getProjectedExpenses(){
             return projectedExpenses;
