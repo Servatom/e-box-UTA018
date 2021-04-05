@@ -1,0 +1,3 @@
+Dance show,A talent show,Maya,Entertainment
+Exhibition,A local gathering,Viveka,Entertainment
+Seminar,Publication of research papers,Sujatha,Education
