@@ -1,7 +1,6 @@
 # e-box-UTA018
 
-Stuck on Ebox?
-We have Ebox coding questions for UTA018 course.
+🥁Ebox coding questions for UTA018 course🥁 <br>
 Made by a bunch of students from CSE 20-24 batch.
 
 ![Visitor Count](https://profile-counter.glitch.me/{Concept-Team.e-box-UTA018}/count.svg)
