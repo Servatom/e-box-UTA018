@@ -3,8 +3,8 @@
 🥁Ebox coding questions for UTA018 course🥁 <br>
 Made by a bunch of students from CSE 20-24 batch.
 
-<!-- ![Visitor Count](https://profile-counter.glitch.me/{Concept-Team.e-box-UTA018}/count.svg) -->
-![](https://estruyf-github.azurewebsites.net/api/VisitorHit?user=Concept-Team&repo=e-box-UTA018&countColorcountColor&countColor=%237B1E7A)
+![Visitor Count](https://profile-counter.glitch.me/{Concept-Team.e-box-UTA018}/count.svg)
+<!--![](https://estruyf-github.azurewebsites.net/api/VisitorHit?user=Concept-Team&repo=e-box-UTA018&countColorcountColor&countColor=%237B1E7A)-->
 
 Contributions to this repo are most welcome!
 
