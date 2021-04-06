@@ -1,6 +1,4 @@
 #include <iostream>
-#include <stdio.h>
-#include <malloc.h>
 #include "Item.cpp"
 using namespace std;
 
