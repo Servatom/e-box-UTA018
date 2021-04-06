@@ -3,13 +3,15 @@
 #include "Hall.cpp"
 using namespace std;
 
-int main() 
-{
+int main(){
     int n;
     string choice;
+    
     cout<<"Enter total number of halls"<<endl;
     cin>>n;
+    
     Hall halls(n);
+    
     for(int i=0;i<halls.size;i++){
             int rating;
             cout<<"Post your rating for hall "<<i<<endl;
@@ -24,7 +26,8 @@ int main()
         cout<<"Rating for hall "<<n<<" is "<<val<<endl;
         cout<<"Do you want to continue(yes/no):"<<endl;
         cin>>choice;
-    }while(choice=="yes");
-   return 0;
+    }
+    while(choice=="yes");
+    return 0;
 }
 
