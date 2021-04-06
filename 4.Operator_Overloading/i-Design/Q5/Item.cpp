@@ -1,4 +1,5 @@
 #include<iostream>
+#include <malloc.h>
 
 using namespace std;
 
@@ -19,7 +20,8 @@ class Item{
         }
         void* operator new(size_t size){
             cout<<"Overloading new operator"<<endl;
-            void* temp=::operator new(size);
+            //void* temp = malloc(size); => can also be used if #include <malloc.h> is done
+            void* temp=::operator new(size); //=>:: operator is used to call the actual new operator
             return temp;
         }
  
