@@ -39,7 +39,7 @@ int main(){
             break;
         }
         case 2:{
-            cout<<"Enter the details of Stage Event in CSV Format\n";
+            cout<<"Enter the details of Stage Event in CSV format\n";
             cin>>stageEventDetail;
             stageEventDetail+=",";
 
