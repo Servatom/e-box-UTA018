@@ -28,8 +28,8 @@ int main(){
 
     try{
 
-        if(n == 0){
-            throw "Arithmetic Exception:Number of days 0 is invalid";
+        if(n <= 0){
+            throw n;
         }
         else{
             cout<<"Item name:"<<it.getName()<<endl;
@@ -39,8 +39,8 @@ int main(){
         }
     }
 
-    catch(const char* msg){
-        cout<<msg<<endl;
+    catch(int n){
+        cout<<"Arithmetic Exception:Number of days "<<n<<" is invalid"<<endl;
     }
 
     return 0;
