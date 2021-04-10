@@ -46,9 +46,9 @@ class Item{
 
         //Constructors
         Item(){
-        itemType="Electricals";
-        itemVendor="Arun electricals";
-        };
+            itemType="Electricals";
+            itemVendor="Arun electricals";
+        }
 
         Item(string itemId, string itemName, string itemType, string itemVendor){
             this->itemId = itemId;
