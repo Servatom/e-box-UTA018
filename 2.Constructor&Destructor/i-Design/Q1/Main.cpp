@@ -6,7 +6,6 @@ using namespace std;
 
 int main(){
     int choice;
-    char ch = 'y';
     cout<<"\nMenu:";
     cout<<"\n1.Electronics";
     cout<<"\n2.Others";
