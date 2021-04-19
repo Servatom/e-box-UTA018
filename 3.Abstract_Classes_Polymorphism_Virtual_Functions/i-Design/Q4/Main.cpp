@@ -34,4 +34,3 @@ int main()
     else cout<<NonVegFood::totalAmt<<endl;
     return 0;
 }
-

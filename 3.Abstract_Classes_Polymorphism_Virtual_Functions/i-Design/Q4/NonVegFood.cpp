@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iostream>
 #include<stdio.h>
 #include<bits/stdc++.h>
 #include"Food.h"
@@ -14,7 +15,7 @@ class NonVegFood:public Food
         
     public:
     static int totalAmt;
-	void displayMenu(){
+    void displayMenu(){
         cout<<"Non-Veg Food Items"<<endl;
         printf("%-15s%-25s%-25s\n","S.no","Name","Cost");
         for(int i=0;i<5;i++){

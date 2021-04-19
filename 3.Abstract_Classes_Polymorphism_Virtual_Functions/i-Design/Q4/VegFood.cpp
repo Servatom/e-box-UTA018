@@ -12,7 +12,7 @@ class VegFood : public Food
         };
         Items it[5]={{"Idly",10},{"Dosa",20},{"Chappathi",12},{"Veg noodles",60},{"Veg Meals",50}};
         
-	public:
+    public:
     	static int totalAmt;
 	void displayMenu(){
         cout<<"Veg Food Items"<<endl;
