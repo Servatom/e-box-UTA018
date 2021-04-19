@@ -10,4 +10,3 @@ class Food
     virtual void calculateBill()=0;
 };
 #endif
-
