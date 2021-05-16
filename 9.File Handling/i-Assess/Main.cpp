@@ -28,11 +28,11 @@ int main()
     switch(choice)
     {
         case 1:{
-            cout<<"the total of all numbers is"<<oddsum<<endl;
+            cout<<"The total of all numbers is "<<oddsum<<endl;
             break;
         }
         case 2:{
-            cout<<"the total of all numbers is"<<evensum<<endl;
+            cout<<"The total of all numbers is "<<evensum<<endl;
             break;
         }
     }
