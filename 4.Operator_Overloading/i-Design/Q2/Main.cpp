@@ -21,8 +21,7 @@ Time operator+(Time& t1,Time& t2){
 }
 
 
-int main()
-{
+int main(){
     Time t,t1,t2;
     int hr,min,sec;
     cout<<"Enter the first time:\n";
