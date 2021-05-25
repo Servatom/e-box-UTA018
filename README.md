@@ -6,7 +6,9 @@ Made by a bunch of students from CSE 20-24 batch.
 ![Visitor Count](https://profile-counter.glitch.me/{Concept-Team.e-box-UTA018}/count.svg)
 <!--![](https://estruyf-github.azurewebsites.net/api/VisitorHit?user=Concept-Team&repo=e-box-UTA018&countColorcountColor&countColor=%237B1E7A)-->
 
-Contributions to this repo are most welcome!
+Contributions to this repo are most welcome!<br>
+
+Note: The assignment for e-box-UTA018 will be merged by 27th May 2021
 
 <!---
 # CONTRIBUTING
