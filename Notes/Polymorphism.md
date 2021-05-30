@@ -20,7 +20,7 @@ class derived2 : public Base
 
 // Use a base class reference parameter.
 void f(base &r) {
-r.vfunc(); 
+    r.vfunc(); 
 }
 
 int main()
@@ -36,8 +36,8 @@ int main()
 
 	/* Calling through base-class reference */
 	f(b); // pass a base object to f()
-  f(d1); // pass a derived1 object to f()
-  f(d2); // pass a derived2 object to f()
+    f(d1); // pass a derived1 object to f()
+    f(d2); // pass a derived2 object to f()
 }
 ```
 
