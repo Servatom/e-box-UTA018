@@ -83,12 +83,12 @@ return 0; }
 
 Output:
 
-`Constructing base`
-`Constructing derived1`
-`Constructing derived2`
-`Destructing derived2`
-`Destructing derived1`
-`Destructing base`
+`Constructing base` <br>
+`Constructing derived1` <br>
+`Constructing derived2` <br>
+`Destructing derived2` <br>
+`Destructing derived1` <br>
+`Destructing base` <br>
 
 ## DERIVING MULTIPLE BASE CLASSES
 
@@ -130,12 +130,12 @@ Inheritance
 
 Output:
 
-`Constructing base1`
-`Constructing base2`
-`Constructing derived`
-`Destructing derived`
-`Destructing base2`
-`Destructing base1`
+`Constructing base1`<br>
+`Constructing base2`<br>
+`Constructing derived`<br>
+`Destructing derived`<br>
+`Destructing base2`<br>
+`Destructing base1`<br>
 
 Constructors are called in order of derivation, left to right, as specified in derived's inheritance list.
 
