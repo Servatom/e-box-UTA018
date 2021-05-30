@@ -149,7 +149,7 @@ derived-constructor(arg-list) : base1(arg-list), base2(arg-list),
 																// ... baseN(arg-list)
 {
 // body of derived constructor
-}*
+}
 ```
 
 Even if a derived class' constructor does not use any arguments, it will still need to declare one if the base class requires it. In this situation, the arguments passed to the derived class are simply passed along to the base.
