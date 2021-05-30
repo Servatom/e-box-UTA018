@@ -95,7 +95,7 @@ Output:
 Syntax:
 
 ```cpp
-*class derived-class-name : access baseclass-name, access baseclass-name { 
+class derived-class-name : access baseclass-name, access baseclass-name { 
 	// body of class
 };*
 ```
