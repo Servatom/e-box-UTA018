@@ -146,7 +146,7 @@ Destructors are called in reverse order, right to left
 Syntax:
 
 ```cpp
-*derived-constructor(arg-list) : base1(arg-list), base2(arg-list),
+derived-constructor(arg-list) : base1(arg-list), base2(arg-list),
 																// ... baseN(arg-list)
 {
 // body of derived constructor
