@@ -36,8 +36,8 @@ int main()
 
 	/* Calling through base-class reference */
 	f(b); // pass a base object to f()
-    f(d1); // pass a derived1 object to f()
-    f(d2); // pass a derived2 object to f()
+	f(d1); // pass a derived1 object to f()
+	f(d2); // pass a derived2 object to f()
 }
 ```
 
@@ -67,7 +67,7 @@ int main()
 
 A *pure virtual function* is a virtual function that has no definition within the base class. To declare a pure virtual function, use this general form:
 
-*`virtual type func-name(parameter-list*) = 0;`
+`virtual type func-name(parameter-list*) = 0;`
 
 ⚠️ When a virtual function is made pure, any derived class must provide its own definition. If the derived class fails to override the pure virtual function, a compile-time error will result.
 
