@@ -59,43 +59,44 @@ int main()
 
 ```cpp
 #include <iostream>
- using namespace std;
- class base {
- public:
-   base() { cout << "Constructing base\n"; }
-   ~base() { cout << "Destructing base\n"; }
- };
- class derived1 : public base {
- public:
-   derived1() { cout << "Constructing derived1\n"; }
-   ~derived1() { cout << "Destructing derived1\n"; }
- };
- class derived2: public derived1 {
- public:
-   derived2() { cout << "Constructing derived2\n"; }
-   ~derived2() { cout << "Destructing derived2\n"; }
- };
+using namespace std;
+class base {
+    public:
+    base() { cout << "Constructing base\n"; }
+    ~base() { cout << "Destructing base\n"; }
+    };
+    class derived1 : public base {
+    public:
+    derived1() { cout << "Constructing derived1\n"; }
+    ~derived1() { cout << "Destructing derived1\n"; }
+    };
+    class derived2: public derived1 {
+    public:
+    derived2() { cout << "Constructing derived2\n"; }
+    ~derived2() { cout << "Destructing derived2\n"; }
+};
 int main() {
-derived2 ob;
-return 0; }
+    derived2 ob;
+    return 0; 
+}
 
 ```
 
 Output:
 
-`Constructing base
-Constructing derived1
-Constructing derived2
-Destructing derived2
-Destructing derived1
-Destructing base`
+`Constructing base` <br>
+`Constructing derived1` <br>
+`Constructing derived2` <br>
+`Destructing derived2` <br>
+`Destructing derived1` <br>
+`Destructing base` <br>
 
 ## DERIVING MULTIPLE BASE CLASSES
 
 Syntax:
 
 ```cpp
-*class derived-class-name : access baseclass-name, access baseclass-name { 
+class derived-class-name : access baseclass-name, access baseclass-name { 
 	// body of class
 };*
 ```
@@ -104,38 +105,36 @@ Constructors and destructors in multiple inheritance:
 
 ```cpp
 #include <iostream>
-   using namespace std;
-   class base1 {
-   public:
-     base1() { cout << "Constructing base1\n"; }
-     ~base1() { cout << "Destructing base1\n"; }
-   };
-   class base2 {
-   public:
-     base2() { cout << "Constructing base2\n"; }
-     ~base2() { cout << "Destructing base2\n"; }
-   };
-   class derived: public base1, public base2 {
-   public:
-     derived() { cout << "Constructing derived\n"; }
-     ~derived() { cout << "Destructing derived\n"; }
-   };
+using namespace std;
+class base1 {
+public:
+    base1() { cout << "Constructing base1\n"; }
+    ~base1() { cout << "Destructing base1\n"; }
+};
+class base2 {
+public:
+    base2() { cout << "Constructing base2\n"; }
+    ~base2() { cout << "Destructing base2\n"; }
+};
+class derived: public base1, public base2 {
+public:
+    derived() { cout << "Constructing derived\n"; }
+    ~derived() { cout << "Destructing derived\n"; }
+};
 int main() {
-derived ob;
-     // construct and destruct ob
-return 0; }
-Chapter 16:
-Inheritance
+    derived ob;// construct and destruct ob
+    return 0; 
+}
 ```
 
 Output:
 
-`Constructing base1
- Constructing base2
- Constructing derived
- Destructing derived
- Destructing base2
- Destructing base1`
+`Constructing base1`<br>
+`Constructing base2`<br>
+`Constructing derived`<br>
+`Destructing derived`<br>
+`Destructing base2`<br>
+`Destructing base1`<br>
 
 Constructors are called in order of derivation, left to right, as specified in derived's inheritance list.
 
@@ -146,11 +145,11 @@ Destructors are called in reverse order, right to left
 Syntax:
 
 ```cpp
-*derived-constructor(arg-list) : base1(arg-list), base2(arg-list),
+derived-constructor(arg-list) : base1(arg-list), base2(arg-list),
 																// ... baseN(arg-list)
 {
 // body of derived constructor
-}*
+}
 ```
 
 Even if a derived class' constructor does not use any arguments, it will still need to declare one if the base class requires it. In this situation, the arguments passed to the derived class are simply passed along to the base.
