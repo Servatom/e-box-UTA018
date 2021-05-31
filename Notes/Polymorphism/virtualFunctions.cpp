@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <string>
 using namespace std;
 
 class Base{
@@ -11,6 +11,7 @@ class Base{
         virtual void sayBye(){
             cout<<"Bye I am base"<<endl;
         }
+        virtual void function()=0; //This is a pure virtual function
 };
 
 class Derived: public Base{
@@ -21,6 +22,9 @@ class Derived: public Base{
 
         void sayBye(){
             cout<<"Bye I am derived"<<endl;
+        }
+        void function(){
+            cout<<"I am just a function"<<endl;
         }
 };
 
@@ -38,6 +42,11 @@ int main(){
 
         On the other hand the sayBye function had the virtual prefix.
         So the derived class overrode the sayBye function of the base class and used the functionality defined in the derived class
+    */
+
+   //Abstract class
+   /*
+        The Base class is an Abstract class since it has atleast one pure virtual function
     */
     return 0;
 }
