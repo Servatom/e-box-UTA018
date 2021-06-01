@@ -1,0 +1,2 @@
+# STL
+Stl is nothing but a set C++ template classes to provide common programming data structures and functions such as lists, stacks,arrays etc. It is a library of container classes, algorithms and iterators. It is like a library. Like in python we can use libraries made by other programmers to make our life simple. Similarly the STL is collection of several such libraries or templates which can be used by other programmers. 
