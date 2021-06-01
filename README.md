@@ -9,6 +9,8 @@ Made by a bunch of students from CSE 20-24 batch.
 Contributions to this repo are most welcome!<br>
 
 Assignments also done!
+
+For C++ notes, click [here](https://github.com/Concept-Team/e-box-UTA018/tree/main/Notes)
 <!---
 # CONTRIBUTING
 
