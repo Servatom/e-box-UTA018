@@ -57,7 +57,7 @@ public:
         *str_what = 0;
         what = 0;
     }
-    MyException(char *s, int e)
+    MyException(const char *s, int e)
     {
         strcpy(str_what, s);
         what = e;
