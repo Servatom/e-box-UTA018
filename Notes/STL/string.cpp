@@ -52,5 +52,25 @@ int main(){
     //Length of string is 10
     cout<<stringVariable<<" Output 6"<<endl;
     
+
+    //Compare
+    cout<<"";
+    string someString;
+    getline(cin, someString);
+    cout<<someString<<endl;
+    string someString2 = "hello";
+    
+    cout<<someString.compare(someString2)<<endl;
+    //it will be 0 if they area equal, -ve if someString2 > someString2 and +ve
+    //if someString > someString2
+
+    //String copy
+    //strcpy(someString, someString2); wont work for normal strings
+    char charArray[20];
+    someString.copy(charArray, someString.length(), 0);
+    cout<<charArray<<endl;
+
+    //String substring
+    cout<<someString.substr(2,3)<<endl;
     return 0;
 }
