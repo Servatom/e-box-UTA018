@@ -1,57 +1,56 @@
-#include<iostream>
-#include<stdio.h>
-#include<exception>
-#include<cstring>
-#include<ctype.h>
-#include<bits/stdc++.h>
+#include <iostream>
+#include <stdio.h>
+#include <exception>
+#include <cstring>
+#include <ctype.h>
+#include <bits/stdc++.h>
 #include "Itemtype.cpp"
 using namespace std;
 int main()
 {
-        string name;
-        double deposit;
-        double costPerday;
+    string name;
+    double deposit;
+    double costPerday;
 
-        Itemtype it;
+    Itemtype it;
 
-        cout<<"Enter the itemtype name: "<<endl;
-        getline(cin,name);
-        it.setName(name);
+    cout << "Enter the itemtype name: " << endl;
+    getline(cin, name);
+    it.setName(name);
 
-        cout<<"Enter item deposit:"<<endl;
-        cin>>deposit;
-        it.setDeposit(deposit);
+    cout << "Enter item deposit:" << endl;
+    cin >> deposit;
+    it.setDeposit(deposit);
 
-        try
+    try
+    {
+
+        if (deposit = int(deposit))
+
         {
+            cout << "Enter item cost per day: " << endl;
+            cin >> costPerday;
+            it.setCostPerday(costPerday);
+            if (costPerday = int(costPerday))
+            {
 
-        if(deposit=int(deposit) )
+                it.display();
+            }
 
-             { cout<<"Enter item cost per day: "<<endl;
-            cin>>costPerday;
-             it.setCostPerday(costPerday);
-                 if(costPerday=int(costPerday))
-                {
-
-                 it.display();
-                }
-
-             else
-             throw 1;
-             }
+            else
+                throw 1;
+        }
 
         else
 
-       throw 1;
+            throw 1;
+    }
+    catch (int)
+    {
 
-        }
-        catch(int )
-        {
+        cout << "NumberFormatException: "
+             << "Price should always be numeric " << endl;
+    }
 
-            cout<<"NumberFormatException: "<<"Price should always be numeric "<<endl;
-        }
-
-
-
-        return 0;
+    return 0;
 }
