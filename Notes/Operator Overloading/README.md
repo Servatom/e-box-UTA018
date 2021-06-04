@@ -652,6 +652,6 @@ int main()
 
 ---
 
-                                                                          Fin.  ✌️
+<p align="center">Fin.  ✌️ </p>
 
 ---
