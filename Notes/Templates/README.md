@@ -606,7 +606,6 @@ Here, `AType` defaults to type int, and `size` defaults to 10. As the program il
 👉 letting the type default to int and the size default to 10
 
 ---
-
-                                                                        Fin. ✌️
+<p align="center">Fin. ✌️</p>
 
 ---
