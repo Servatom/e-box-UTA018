@@ -104,7 +104,7 @@ unformatted data functions
 
 ```cpp
 ifstream in ("File1.txt");
-outstream out("File2.txt");
+ofstream out("File2.txt");
 
 while(in.get(ch)){
 	out.put(ch);
