@@ -51,6 +51,17 @@ int main()
 	return 0; 
 }
 ```
+## Types of Inheritance:
+
+There are many types of inheritances, based on the number of subclasses/ base classes linked to each other. Let us have a look:
+
+1. Single Inheritance - An inheritance in which a single derived class inherits its properties from a single parent class.
+2. Multilevel Inheritance - Similar to Single inheritance, but here, the derived class further inherits its properties to another sub class.
+3. Multiple Inheritance - Here, a single derived class inherits its properties from more than one base classes. 
+4. Hierarchical Inheritance - Here, a single base class inherits its properties to more than one derived classes.
+5. Hybrid Inheritance - It is the combination of various inheritances listed above. For eg, below is shown a hybrid inheritance consisting of Hierarchical, Multilevel and Multiple inheritance.
+
+[![Inheritance-Flowchart](https://i.postimg.cc/Hn0J9ppt/Screenshot-2021-06-07-at-2-11-33-PM.png)](https://postimg.cc/V06LYP0S)
 
 ## Constructor, Destructor and Inheritance
 
