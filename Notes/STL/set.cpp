@@ -42,7 +42,7 @@ int main(){
     cout<<"Output 1: ======="<<endl;
     print(s2);
 
-    //iterator can also be set<int, greate<int> >::iterator it; no effect in ordering. the set when created must have that
+    //iterator can also be set<int, greater<int> >::iterator it; no effect in ordering. the set when created must have that
 
     cout<<"ERASING STUFF"<<endl;
     cout<<"Initial"<<endl;
