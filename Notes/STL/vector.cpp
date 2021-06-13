@@ -45,7 +45,7 @@ int main(){
     list1.insert(newIt, 12);
     vectorPrinter(list1);
 
-    //For character vector
+    //different way of creating new vectors
     vector<char> vectorChar;
     vector<char>v(10);
     vector<char>cv(5,'x');
