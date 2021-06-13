@@ -1,5 +1,7 @@
 #include <iostream>
-#include <functional>
+#include <functional> //Websites show this library to be included for using hash
+//Some compilers other than g++ will tell you to include bits/stdc++
+//On g++ ideally you dont need to include anythings
 
 using namespace std;
 
