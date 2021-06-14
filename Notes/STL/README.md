@@ -892,10 +892,10 @@ Thanks to @Rupanshi Jain for the code examples!
     str2 = "I am Groot";
 
     str1.insert(6, str2);       // Insert str2 in str1 starting from index 6 of str1
-    				 			// i.e. str1 = "Hello I am Groot!"
+    				// i.e. str1 = "Hello I am Groot!"
 
     str1.insert(6, str2, 5, 4); // Insert 4 characters from index 5 of str2 at index 6 of str1
-    				 			// i.e. str1 = "Hello Groo!"
+    				// i.e. str1 = "Hello Groo!"
     ```
 
 - `replace()` replaces content of invoking string with string passed in argument, as per the number of characters told to be replaced.
@@ -905,18 +905,18 @@ Thanks to @Rupanshi Jain for the code examples!
     str2 = "Bill";
 
     str1.replace(0, 4, str2);         	// Replace 4 characters from 0th index of str1 with str2
-    									// i.e. str1 = "Bill and Jill"
+    					// i.e. str1 = "Bill and Jill"
 
     str1.replace(5, 3, str2, 1, 3);   	// Replace 3 characters from 5th index of str1 with
-    									// 3 characters from 1st index of str2
-    									// i.e. str1 = "Jack ill Jill"
+    					// 3 characters from 1st index of str2
+    					// i.e. str1 = "Jack ill Jill"
     ```
 
 - `erase()` removes characters from the string
 
     ```cpp
     str1 = "Windows or Linux";
-    str1.erase(0, 11); 	// Erase 11 characters starting from index 0
+    str1.erase(0, 11); 		// Erase 11 characters starting from index 0
     			      	// i.e. str1 = "Linux"
     ```
 
@@ -957,8 +957,8 @@ Hashing maps a given value to a particular key. This helps in faster access.
 **Syntax:**
 
 ```cpp
-hash<class type> *hash_obj*;   	// The class type has to be the one which we will 
-								// pass in the operator function
+hash<class type> hash_obj;   	// The class type has to be the one which we will 
+				// pass in the operator function
 ```
 
 Let's look at some hash keys produced by passing different kinds of data:
