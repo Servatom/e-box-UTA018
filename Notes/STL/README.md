@@ -24,12 +24,12 @@ Before we proceed, we shall look at the general syntax of defining an iterator f
 ```cpp
 container_name<class type> :: iterator iter_name
 ```
-[Vectors](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#vector)
-[Lists](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#list)
-[Map](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#map)
-[Algorithms](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#algorithms)
-[The string class](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#string-class)
-[Hashing](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#hashing)
+[Vectors](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#vector) <br>
+[Lists](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#list) <br>
+[Map](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#map) <br>
+[Algorithms](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#algorithms) <br>
+[The string class](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#string-class) <br>
+[Hashing](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#hashing) <br>
 
 ## Vector
 
