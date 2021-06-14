@@ -22,7 +22,7 @@ Set: ORDERED, DISTINCT
 Before we proceed, we shall look at the general syntax of defining an iterator for a template class:
 
 ```cpp
-*container_name*<class type> :: iterator *iter_name* 
+container_name<class type> :: iterator iter_name
 ```
 
 ## Vector
@@ -32,7 +32,7 @@ Till now we have mostly used a static array who's size is fixed at compile time.
 **Syntax:**
 
 ```cpp
-vector<*data_type*> *obj_name;*
+vector<data_type> obj_name;
 ```
 
 A vector has the following constructors:
@@ -66,51 +66,51 @@ A code example that shows basic operations on a vector:
 
 ```cpp
 #include <iostream>
-#include <vector>       // must include to use vector containers
+#include <vector> // must include to use vector containers
 #include <cctype>
 using namespace std;
 int main()
 {
-		vector<char> v(10);       // create a vector of type char of length 10
-		unsigned int i;
+    vector<char> v(10); // create a vector of type char of length 10
+    unsigned int i;
 
-		// display original size of v
-		cout << "Size = " << v.size() << endl;
+    // display original size of v
+    cout << "Size = " << v.size() << endl;
 
-		// assign the elements of the vector some values
-		for(i=0; i<10; i++) 
-				v[i] = i + 'a';       // notice the array subscripting
+    // assign the elements of the vector some values
+    for (i = 0; i < 10; i++)
+        v[i] = i + 'a'; // notice the array subscripting
 
-		// display contents of vector
-		cout << "Current Contents:\n";
-		for(i=0; i<v.size(); i++) 
-				cout << v[i] << " ";
-		cout << "\n\n";
+    // display contents of vector
+    cout << "Current Contents:\n";
+    for (i = 0; i < v.size(); i++)
+        cout << v[i] << " ";
+    cout << "\n\n";
 
-		cout << "Expanding vector\n";
-		/* put more values onto the end of the vector,
+    cout << "Expanding vector\n";
+    /* put more values onto the end of the vector,
 		it will grow as needed */
-		for(i=0; i<10; i++) 
-				v.push_back(i + 10 + 'a');
+    for (i = 0; i < 10; i++)
+        v.push_back(i + 10 + 'a');
 
-		// display current size of v
-		cout << "Size now = " << v.size() << endl;
+    // display current size of v
+    cout << "Size now = " << v.size() << endl;
 
-		// display contents of vector
-		cout << "Current contents:\n";
-		for(i=0; i<v.size(); i++) 
-				cout << v[i] << " ";
-		cout << "\n\n";
+    // display contents of vector
+    cout << "Current contents:\n";
+    for (i = 0; i < v.size(); i++)
+        cout << v[i] << " ";
+    cout << "\n\n";
 
-		// change contents of vector
-		for(i=0; i<v.size(); i++) 
-				v[i] = toupper(v[i]);
+    // change contents of vector
+    for (i = 0; i < v.size(); i++)
+        v[i] = toupper(v[i]);
 
-		cout << "Modified Contents:\n";
-		for(i=0; i<v.size(); i++) 
-				cout << v[i] << " ";
-		cout << endl;
-		return 0;
+    cout << "Modified Contents:\n";
+    for (i = 0; i < v.size(); i++)
+        cout << v[i] << " ";
+    cout << endl;
+    return 0;
 }
 ```
 
@@ -135,32 +135,32 @@ A B C D E F G H I J K L M N O P Q R S T
 Arrays and pointers are closely linked together. Just like how elements of an array can be accessed either using subscript or using pointers, in STL, the pointer's job is done by an **iterator**.
 
 ```cpp
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 int main()
 {
-		vector<char> v(10);           // creating a char vector of size 10;
-		vector<char> :: iterator p;   // declaring an iterator
-		int i=0;
-		p=v.begin();         // p now points to the start of vector v
-		while(p!=v.end())
-		{
-				*p= i + 'a';     // This is called dereferencing
-				p++;
-				i++;
-		}
+    vector<char> v(10);         // creating a char vector of size 10;
+    vector<char>::iterator p;   // declaring an iterator
+    int i = 0;
+    p = v.begin();              // p now points to the start of vector v
+    while (p != v.end())
+    {
+        *p = i + 'a';           // This is called dereferencing
+        p++;
+        i++;
+    }
 
-		// diplaying contents of v
-		cout << "Original contents:\n";
-		p = v.begin();
-		while(p != v.end()) 
-		{
-				cout << *p << " ";
-				p++;
-		}
-		return 0;
+    // diplaying contents of v
+    cout << "Original contents:\n";
+    p = v.begin();
+    while (p != v.end())
+    {
+        cout << *p << " ";
+        p++;
+    }
+    return 0;
 }
 ```
 
@@ -183,53 +183,59 @@ In addition to putting new values on the end of a vector, we can insert elements
 using namespace std;
 int main()
 {
-		vector<char> v(10);
-		vector<char> v2;
-		char str[] = "<Vector>";
-		unsigned int i;
+    vector<char> v(10);
+    vector<char> v2;
+    char str[] = "<Vector>";
+    unsigned int i;
 
-		// initialize v
-		for(i=0; i<10; i++) v[i] = i + 'a';
+    // initialize v
+    for (i = 0; i < 10; i++)
+        v[i] = i + 'a';
 
-		// copy characters in str into v2
-		for(i=0; str[i]!='\0'; i++) v2.push_back(str[i]);
+    // copy characters in str into v2
+    for (i = 0; str[i] != '\0'; i++)
+        v2.push_back(str[i]);
 
-		// display original contents of vector
-		cout << "Original contents of v:\n";
-		for(i=0; i<v.size(); i++) cout << v[i] << " ";
-		cout << "\n\n";
+    // display original contents of vector
+    cout << "Original contents of v:\n";
+    for (i = 0; i < v.size(); i++)
+        cout << v[i] << " ";
+    cout << "\n\n";
 
-		vector<char>::iterator p = v.begin();
-		p += 2; // point to 3rd element
+    vector<char>::iterator p = v.begin();
+    p += 2; // point to 3rd element
 
-		// insert 10 X's into v
-		v.insert(p, 10, 'X');
+    // insert 10 X's into v
+    v.insert(p, 10, 'X');
 
-		// display contents after insertion
-		cout << "Size after inserting X's = " << v.size() << endl;
-		cout << "Contents after insert:\n";
-		for(i=0; i<v.size(); i++) cout << v[i] << " ";
-		cout << "\n\n";
+    // display contents after insertion
+    cout << "Size after inserting X's = " << v.size() << endl;
+    cout << "Contents after insert:\n";
+    for (i = 0; i < v.size(); i++)
+        cout << v[i] << " ";
+    cout << "\n\n";
 
-		// remove those elements
-		p = v.begin();
-		p += 2; // point to 3rd element
-		v.erase(p, p+10); // remove next 10 elements
+    // remove those elements
+    p = v.begin();
+    p += 2;             // point to 3rd element
+    v.erase(p, p + 10); // remove next 10 elements
 
-		// display contents after deletion
-		cout << "Size after erase = " << v.size() << endl;
-		cout << "Contents after erase:\n";
-		for(i=0; i<v.size(); i++) cout << v[i] << " ";
-		cout << "\n\n";
+    // display contents after deletion
+    cout << "Size after erase = " << v.size() << endl;
+    cout << "Contents after erase:\n";
+    for (i = 0; i < v.size(); i++)
+        cout << v[i] << " ";
+    cout << "\n\n";
 
-		// Insert v2 into v
-		v.insert(p, v2.begin(), v2.end());
-		cout << "Size after v2's insertion = ";
-		cout << v.size() << endl;
-		cout << "Contents after insert:\n";
-		for(i=0; i<v.size(); i++) cout << v[i] << " ";
-		cout << endl;
-		return 0;
+    // Insert v2 into v
+    v.insert(p, v2.begin(), v2.end());
+    cout << "Size after v2's insertion = ";
+    cout << v.size() << endl;
+    cout << "Contents after insert:\n";
+    for (i = 0; i < v.size(); i++)
+        cout << v[i] << " ";
+    cout << endl;
+    return 0;
 }
 ```
 
@@ -263,28 +269,28 @@ using namespace std;
 class temp
 {
     float Cent;
-	float Fahr;
+    float Fahr;
 
 public:
     temp()
     {
-        Cent=0;
-		Fahr=0;
+        Cent = 0;
+        Fahr = 0;
     }
     temp(float x)
     {
-        Cent=x;
-		Fahr= (9/5)*Cent + 32;
+        Cent = x;
+        Fahr = (9 / 5) * Cent + 32;
     }
-		void calcFahr()
-		{
-			Fahr= (float)(9*Cent)/5 + 32;
-		}
+    void calcFahr()
+    {
+        Fahr = (float)(9 * Cent) / 5 + 32;
+    }
     float getCent()
     {
         return Cent;
     }
-	float getFahr()
+    float getFahr()
     {
         return Fahr;
     }
@@ -292,31 +298,32 @@ public:
 int main()
 {
     vector<temp> t;
-		vector<temp> :: iterator p;
-		int i;
+    vector<temp>::iterator p;
+    int i;
     for (i = 0; i < 10; i++)
     {
         t.push_back(temp(i));
     }
-		
-	cout<<"Temperature in Centigrade: \n";
-	for(i=0; i<t.size(); i++)
-		cout<<t[i].getCent()<<" ";
 
-    cout<<endl<<endl;
+    cout << "Temperature in Centigrade: \n";
+    for (i = 0; i < t.size(); i++)
+        cout << t[i].getCent() << " ";
 
-	for(i=0; i<t.size(); i++)
-	{
-		t[i].calcFahr();
-	}
-		
-	p=t.begin();
-    cout<<"Temperature in Fahrenheit: \n";
-    while(p!=t.end())
-		{
-				cout<<p->getFahr()<<" ";
-				p++;
-		}
+    cout << endl
+         << endl;
+
+    for (i = 0; i < t.size(); i++)
+    {
+        t[i].calcFahr();
+    }
+
+    p = t.begin();
+    cout << "Temperature in Fahrenheit: \n";
+    while (p != t.end())
+    {
+        cout << p->getFahr() << " ";
+        p++;
+    }
     return 0;
 }
 ```
@@ -340,18 +347,18 @@ The list class supports a bidirectional, linear list. Unlike a vector, which sup
 **Syntax:**
 
 ```cpp
-list<*data_type*> *obj_name*;
+list<data_type> obj_name;
 ```
 
 A list has the following constructors:
 
 ```cpp
-list<int> l;               // empty list
-list<int> l(4);            // a list with 4 elements 
-list<int> l(5,1);          // a list with 5 elements initialised as 1
-list<int> l({1,2,3,4,5});  // list conatins all the inner elements 
-list<int> l(l2);           // all elements of l2, which is another list, copied to l
-list<int> l(v.begin(), v.end());   // list conatining all elements of a vector v
+list<int> l;                     // empty list
+list<int> l(4);                  // a list with 4 elements
+list<int> l(5, 1);               // a list with 5 elements initialised as 1
+list<int> l({1, 2, 3, 4, 5});    // list conatins all the inner elements
+list<int> l(l2);                 // all elements of l2, which is another list, copied to l
+list<int> l(v.begin(), v.end()); // list conatining all elements of a vector v
 ```
 
 > The following comparison operators are defined for list:
@@ -389,25 +396,26 @@ The functions common to list and vectors can be used with lists in a similar fas
 using namespace std;
 int main()
 {
-		list<int> lst; // create an empty list
-		int i;
-		for(i=0; i<10; i++) lst.push_back(i);
-		cout << "List printed forwards:\n";
-		list<int>::iterator p = lst.begin();
-		while(p != lst.end()) 
-		{
-				cout << *p << " ";
-				p++;
-		}
-		cout << "\n\n";
-		cout << "List printed backwards:\n";
-		p = lst.end();
-		while(p != lst.begin()) 
-		{
-				p--;    // decrement pointer before using
-				cout << *p << " ";
-		}
-		return 0;
+    list<int> lst; // create an empty list
+    int i;
+    for (i = 0; i < 10; i++)
+        lst.push_back(i);
+    cout << "List printed forwards:\n";
+    list<int>::iterator p = lst.begin();
+    while (p != lst.end())
+    {
+        cout << *p << " ";
+        p++;
+    }
+    cout << "\n\n";
+    cout << "List printed backwards:\n";
+    p = lst.end();
+    while (p != lst.begin())
+    {
+        p--; // decrement pointer before using
+        cout << *p << " ";
+    }
+    return 0;
 }
 ```
 
@@ -439,33 +447,34 @@ The `sort()` function makes our life easy by doing the sorting with a single fun
 using namespace std;
 int main()
 {
-		list<int> lst;
-		int i;
+    list<int> lst;
+    int i;
 
-		// create a list of random integers
-		for(i=0; i<10; i++)
-		lst.push_back(rand());
+    // create a list of random integers
+    for (i = 0; i < 10; i++)
+        lst.push_back(rand());
 
-		cout << "Original contents:\n";
-		list<int>::iterator p = lst.begin();
-		while(p != lst.end()) 
-		{
-				cout << *p << " ";
-				p++;
-		}
-		cout << endl << endl;
+    cout << "Original contents:\n";
+    list<int>::iterator p = lst.begin();
+    while (p != lst.end())
+    {
+        cout << *p << " ";
+        p++;
+    }
+    cout << endl
+         << endl;
 
-		// sort the list
-		lst.sort();
+    // sort the list
+    lst.sort();
 
-		cout << "Sorted contents:\n";
-		p = lst.begin();
-		while(p != lst.end()) 
-		{
-				cout << *p << " ";
-				p++;
-		}
-		return 0;
+    cout << "Sorted contents:\n";
+    p = lst.begin();
+    while (p != lst.end())
+    {
+        cout << *p << " ";
+        p++;
+    }
+    return 0;
 }
 ```
 
@@ -491,42 +500,46 @@ One ordered list may be merged with another. The result is an ordered list that 
 using namespace std;
 int main()
 {
-		list<int> lst1, lst2;
-		int i;
-		for(i=0; i<10; i+=2) lst1.push_back(i);
-		for(i=1; i<11; i+=2) lst2.push_back(i);
+    list<int> lst1, lst2;
+    int i;
+    for (i = 0; i < 10; i += 2)
+        lst1.push_back(i);
+    for (i = 1; i < 11; i += 2)
+        lst2.push_back(i);
 
-		cout << "Contents of lst1:\n";
-		list<int>::iterator p = lst1.begin();
-		while(p != lst1.end()) 
-		{
-				cout << *p << " ";
-				p++;
-		}
-		cout << endl << endl;
+    cout << "Contents of lst1:\n";
+    list<int>::iterator p = lst1.begin();
+    while (p != lst1.end())
+    {
+        cout << *p << " ";
+        p++;
+    }
+    cout << endl
+         << endl;
 
-		cout << "Contents of lst2:\n";
-		p = lst2.begin();
-		while(p != lst2.end()) 
-		{
-				cout << *p << " ";
-				p++;
-		}
-		cout << endl << endl;
+    cout << "Contents of lst2:\n";
+    p = lst2.begin();
+    while (p != lst2.end())
+    {
+        cout << *p << " ";
+        p++;
+    }
+    cout << endl
+         << endl;
 
-		// now, merge the two lists
-		lst1.merge(lst2);
-		if(lst2.empty())
-		cout << "lst2 is now empty\n";
+    // now, merge the two lists
+    lst1.merge(lst2);
+    if (lst2.empty())
+        cout << "lst2 is now empty\n";
 
-		cout << "Contents of lst1 after merge:\n";
-		p = lst1.begin();
-		while(p != lst1.end()) 
-		{
-				cout << *p << " ";
-				p++;
-		}
-		return 0;
+    cout << "Contents of lst1 after merge:\n";
+    p = lst1.begin();
+    while (p != lst1.end())
+    {
+        cout << *p << " ";
+        p++;
+    }
+    return 0;
 }
 ```
 
@@ -563,7 +576,7 @@ The `map` and the `multimap` are both containers that manage key/value pairs as 
 **Syntax:**
 
 ```cpp
-map<class *key*, class *value*> *map_object*;
+map<class key, class value> map_object;
 ```
 
 > The following comparison operators are defined for map.
@@ -572,13 +585,13 @@ map<class *key*, class *value*> *map_object*;
 A map has the following constructors:
 
 ```cpp
-map<int, int> m;         // empty map
-map<int,int> m2(m.find(*key1*), m.find(*key2*));  // Copying from a range
-map<int, int> m3(m2);    // copy constructor
-map<int,int> m4{ {'a',1}, {'b',2} };   // list of pairs
+map<int, int> m;                                    // empty map
+map<int, int> m2(m.find(*key1 *), m.find(*key2 *)); // Copying from a range
+map<int, int> m3(m2);                               // copy constructor
+map<int, int> m4{{'a', 1}, {'b', 2}};               // list of pairs
 
-m.insert(pair<char, int> ('A', 65) );
-m.insert(make_pair( (char)'A', 65) );
+m.insert(pair<char, int>('A', 65));
+m.insert(make_pair((char)'A', 65));
 ```
 
 The 4th type of initialisation is supported by Clang 3.6.2 initialiser-list syntax.  
@@ -588,16 +601,19 @@ use `g++ -std=c++11 <filename>`  while compiling to make it work
 > Key/value pairs are stored in a map as objects of type **pair**, which has this template specification.
 
 ```cpp
-template <class Ktype, class Vtype> struct pair {
-		typedef Ktype first_type; // type of key
-		typedef Vtype second_type; // type of value
-		Ktype first; // contains the key
-		Vtype second; // contains the value
+template <class Ktype, class Vtype>
+struct pair
+{
+    typedef Ktype first_type;  // type of key
+    typedef Vtype second_type; // type of value
+    Ktype first;               // contains the key
+    Vtype second;              // contains the value
 
-		// constructors
-		pair();
-		pair(const Ktype &k, const Vtype &v);
-		template<class A, class B> pair(const<A, B> &ob);
+    // constructors
+    pair();
+    pair(const Ktype &k, const Vtype &v);
+    template <class A, class B>
+    pair(const<A, B> &ob);
 }
 ```
 
@@ -634,26 +650,26 @@ The following program illustrates the basics of using a map. It stores key/value
 using namespace std;
 int main()
 {
-		map<char, int> m;
-		int i;
+    map<char, int> m;
+    int i;
 
-		// put pairs into map
-		for(i=0; i<26; i++) 
-		{
-				m.insert(pair<char, int>('A'+i, 65+i));
-		}
-		char ch;
-		cout << "Enter key: ";
-		cin >> ch;
-		map<char, int>::iterator p;
+    // put pairs into map
+    for (i = 0; i < 26; i++)
+    {
+        m.insert(pair<char, int>('A' + i, 65 + i));
+    }
+    char ch;
+    cout << "Enter key: ";
+    cin >> ch;
+    map<char, int>::iterator p;
 
-		// find value given key
-		p = m.find(ch);
-		if(p != m.end())
-		cout << "Its ASCII value is " << p->second;
-		else
-		cout << "Key not in map.\n";
-		return 0;
+    // find value given key
+    p = m.find(ch);
+    if (p != m.end())
+        cout << "Its ASCII value is " << p->second;
+    else
+        cout << "Key not in map.\n";
+     ̰ return 0;
 }
 ```
 
@@ -675,29 +691,31 @@ int main()
     m1.insert(pair<int, int>(2, 19));
     //ordered entries are created...ascending
 
-    map<int, int>::iterator p=m1.begin();
-    cout<<"Map 1:\n";
-    while(p!=m1.end())
+    map<int, int>::iterator p = m1.begin();
+    cout << "Map 1:\n";
+    while (p != m1.end())
     {
-        cout<<"{ "<<p->first<<" --> "<<p->second<<" }"<<endl;
+        cout << "{ " << p->first << " --> " << p->second << " }" << endl;
         p++;
     }
-    cout<<endl<<endl;
+    cout << endl
+         << endl;
 
     //for descending ->
     map<int, int, greater<int> > m2(m1.begin(), m1.end()); // greater<int> is a comparator function
-                                                            // which defualts to less<key_type>
-    p=m2.begin();
-    cout<<"Map 2:\n";
-    while(p!=m2.end())
+                                                           // which defualts to less<key_type>
+    p = m2.begin();
+    cout << "Map 2:\n";
+    while (p != m2.end())
     {
-        cout<<"{ "<<p->first<<" --> "<<p->second<<" }"<<endl;
+        cout << "{ " << p->first << " --> " << p->second << " }" << endl;
         p++;
     }
 
-    cout<<"\n\nUsing subscripting [ ] to access map values:\n";
-    cout<<"m1[1] = "<<m1[1]<<endl;;
-    cout<<"m2[3] = "<<m2[3]<<endl;
+    cout << "\n\nUsing subscripting [ ] to access map values:\n";
+    cout << "m1[1] = " << m1[1] << endl;
+    ;
+    cout << "m2[3] = " << m2[3] << endl;
     return 0;
 }
 ```
@@ -734,58 +752,58 @@ It is similar to that in vectors and lists. Following is a code example:
 #include <cstring>
 using namespace std;
 
-class name {
-		char str[40];        // string type can be used instead
-		public:
-		name() { strcpy(str, ""); }
-		name(char *s) { strcpy(str, s); }
-		char *get() { return str; }
+class name
+{
+    char str[40]; // string type can be used instead
+public:
+    name() { strcpy(str, ""); }
+    name(char *s) { strcpy(str, s); }
+    char *get() { return str; }
 };
-		
+
 // Must define less than relative to name objects.
 bool operator<(name a, name b)
 {
-		return strcmp(a.get(), b.get()) < 0;
+    return strcmp(a.get(), b.get()) < 0;
 }
-		
-class phoneNum 
+
+class phoneNum
 {
-		char str[80];        // string type can be used instead
-		public:
-		phoneNum() { strcmp(str, ""); }
-		phoneNum(char *s) { strcpy(str, s); }
-		char *get() { return str; }
+    char str[80]; // string type can be used instead
+public:
+    phoneNum() { strcmp(str, ""); }
+    phoneNum(char *s) { strcpy(str, s); }
+    char *get() { return str; }
 };
 
 int main()
 {
-		map<name, phoneNum> directory;
-		// put names and numbers into map
-		directory.insert(pair<name, phoneNum>(name("Tom"),
-		phoneNum("555-4533")));
-		
-		directory.insert(pair<name, phoneNum>(name("Chris"),
-		phoneNum("555-9678")));
-		
-		directory.insert(pair<name, phoneNum>(name("John"),
-		phoneNum("555-8195")));
-		
-		directory.insert(pair<name, phoneNum>(name("Rachel"),
-		phoneNum("555-0809")));
-		
-		// given a name, find number
-		char str[80];
-		cout << "Enter name: ";
-		cin >> str;
-		map<name, phoneNum>::iterator p;
-		p = directory.find(name(str));
-		
-		
-		if(p != directory.end())
-		cout << "Phone number: " << p->second.get();
-		else
-		cout << "Name not in directory.\n";
-		return 0;
+    map<name, phoneNum> directory;
+    // put names and numbers into map
+    directory.insert(pair<name, phoneNum>(name("Tom"),
+                                          phoneNum("555-4533")));
+
+    directory.insert(pair<name, phoneNum>(name("Chris"),
+                                          phoneNum("555-9678")));
+
+    directory.insert(pair<name, phoneNum>(name("John"),
+                                          phoneNum("555-8195")));
+
+    directory.insert(pair<name, phoneNum>(name("Rachel"),
+                                          phoneNum("555-0809")));
+
+    // given a name, find number
+    char str[80];
+    cout << "Enter name: ";
+    cin >> str;
+    map<name, phoneNum>::iterator p;
+    p = directory.find(name(str));
+
+    if (p != directory.end())
+        cout << "Phone number: " << p->second.get();
+    else
+        cout << "Name not in directory.\n";
+    return 0;
 }
 ```
 
@@ -819,11 +837,11 @@ The string class has many advantages over the typical char array. It makes our w
 **Initialising String class objects using constructors:** 
 
 ```cpp
-#include<string>
+#include <string>
 
-string s1;     		 // empty string object
-string s2("hello!");     // converts a null terminated string into string object
-string s3(s2);    	 // copy constructor
+string s1;           // empty string object
+string s2("hello!"); // converts a null terminated string into string object
+string s3(s2);       // copy constructor
 ```
 
 The need of `strcmp()`, `strcpy()`, `strcat()` is replaced by the regular operators in c++, like ==, < = , > = , <, >, ! =, +, =, [ ], to list a few.
@@ -855,16 +873,16 @@ Thanks to @Rupanshi Jain for the code examples!
     str1 = "Hello World! ";
     str2 = "Error found ";
 
-    str1.append(str2);         	// Hello World! Error found
+    str1.append(str2);      // Hello World! Error found
 
-    str1.append(str2, 5);      	// Appends 5 characeters from str2 to str1
-    				// i.e. str1 = "Hello World! Error"
+    str1.append(str2, 5);   // Appends 5 characeters from str2 to str1
+                            // i.e. str1 = "Hello World! Error"
 
-    str2.append(str1, 0, 5);   	// Appends 5 characters from 0th index of str1 to str2
-    				// i.e. str2 = "Error found Hello"
+    str2.append(str1, 0, 5); // Appends 5 characters from 0th index of str1 to str2
+                             // i.e. str2 = "Error found Hello"
 
-    str2.append(5, '!');       // Appends 5 occurences of '!' to str2
-                               // i.e. str2 = "Error found !!!!!"
+    str2.append(5, '!');    // Appends 5 occurences of '!' to str2
+                            // i.e. str2 = "Error found !!!!!"
     ```
 
 - `insert()` helps in inserting one string into other at any specified index
@@ -873,11 +891,11 @@ Thanks to @Rupanshi Jain for the code examples!
     str1 = "Hello !";
     str2 = "I am Groot";
 
-    str1.insert(6, str2);        // Insert str2 in str1 starting from index 6 of str1
-    				 // i.e. str1 = "Hello I am Groot!"
+    str1.insert(6, str2);       // Insert str2 in str1 starting from index 6 of str1
+    				 			// i.e. str1 = "Hello I am Groot!"
 
-    str1.insert(6, str2, 5, 4);  // Insert 4 characters from index 5 of str2 at index 6 of str1
-    				 // i.e. str1 = "Hello Groo!"
+    str1.insert(6, str2, 5, 4); // Insert 4 characters from index 5 of str2 at index 6 of str1
+    				 			// i.e. str1 = "Hello Groo!"
     ```
 
 - `replace()` replaces content of invoking string with string passed in argument, as per the number of characters told to be replaced.
@@ -887,19 +905,19 @@ Thanks to @Rupanshi Jain for the code examples!
     str2 = "Bill";
 
     str1.replace(0, 4, str2);         	// Replace 4 characters from 0th index of str1 with str2
-    					// i.e. str1 = "Bill and Jill"
+    									// i.e. str1 = "Bill and Jill"
 
     str1.replace(5, 3, str2, 1, 3);   	// Replace 3 characters from 5th index of str1 with
-    					// 3 characters from 1st index of str2
-    					// i.e. str1 = "Jack ill Jill"
+    									// 3 characters from 1st index of str2
+    									// i.e. str1 = "Jack ill Jill"
     ```
 
 - `erase()` removes characters from the string
 
     ```cpp
     str1 = "Windows or Linux";
-    str1.erase(0, 11);        // Erase 11 characters starting from index 0
-    			      // i.e. str1 = "Linux"
+    str1.erase(0, 11); 	// Erase 11 characters starting from index 0
+    			      	// i.e. str1 = "Linux"
     ```
 
 - `find()`, `rfind()` returns the index at which the match occurs within the invoking string. If no match is found, npos is returned.
@@ -939,8 +957,8 @@ Hashing maps a given value to a particular key. This helps in faster access.
 **Syntax:**
 
 ```cpp
-hash<class type> *hash_obj*;   // The class type has to be the one which we will 
-														 // pass in the operator function
+hash<class type> *hash_obj*;   	// The class type has to be the one which we will 
+								// pass in the operator function
 ```
 
 Let's look at some hash keys produced by passing different kinds of data:
