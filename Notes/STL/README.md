@@ -24,6 +24,12 @@ Before we proceed, we shall look at the general syntax of defining an iterator f
 ```cpp
 container_name<class type> :: iterator iter_name
 ```
+[Vectors](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#vector)
+[Lists](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#list)
+[Map](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#map)
+[Algorithms](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#algorithms)
+[The string class](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#string-class)
+[Hashing](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#hashing)
 
 ## Vector
 
@@ -673,7 +679,7 @@ int main()
 }
 ```
 
-Another interesting thing about maps is that we can use subscripting with map variables to access a value. The content inside [ ] is the key. If `m` is a map variable, `m[*key*]` will return the value for *key .*  If no such key exists in the map, a default value (i.e. 0) is added for the key passed in the map. So, one should be careful. 
+Another interesting thing about maps is that we can use subscripting with map variables to access a value. The content inside [ ] is the key. If `m` is a map variable, `m[key]` will return the value for *key .*  If no such key exists in the map, a default value (i.e. 0) is added for the key passed in the map. So, one should be careful. 
 
 ```cpp
 #include <iostream>
