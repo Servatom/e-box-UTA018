@@ -38,5 +38,9 @@ int main(){
     map<int, int>::iterator finder = m1.find(5);
     cout<<"This is the value of 5: "<<finder->second<<endl;
     
+
+    //map<int, char> m{{1, 'a'}, {3, 'b'}, {5, 'c'}, {7, 'd'}};
+    //For compiling above use: g++ -std=c++11 map.cpp
+
     return 0;
 }
