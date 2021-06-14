@@ -4,7 +4,6 @@ After having learned about generic functions and classes, let's see their implem
 
 It provides general-purpose, *templatized* classes and functions that implement many popular and commonly used algorithms and data structures, like vectors, lists, queues, stacks, etc. Because the STL is constructed from template classes, the algorithms and data structures can be applied to nearly any type of data.
 
-**Contents:**
 
 Any STL has three parts:
 
@@ -14,25 +13,45 @@ Any STL has three parts:
 
 > In short, algorithms use iterators to interact with containers.
 
-[Some widely used containers:](STL%20-%20Standard%20Template%20Library%2066a0eb69071242f092e93e99d9cd2bf2/Some%20widely%20used%20containers%20d0dae3432d814ae08740df85aa92d185.csv)
+**Some widely used containers:**
+|Container|Description| Header file|
+|-----|--------|--------|
+|Bitset|A set of bits | `<bitset>`|
+|Deque  |Double-ended queue     | `<deque>`|
+|List|A linear list | `<list>`|
+|Map|Key-value pairs in which each key has only one value| `<map>`|
+|Multimap|A map that allows duplicate keys | `<map>`|
+|Set|A set is a list of unique elements | `<set>`|
+|Stack|A container based on LIFO methodology | `<stack>`|
+|String|An array of alphanumeric characters and symbols| `<string>`|
+|Vector|A dynamic array| `<vector>`|
+
+
 
 > List: UNORDERED, Not DISTINCT
 Set: ORDERED, DISTINCT
-
+<br>
 Before we proceed, we shall look at the general syntax of defining an iterator for a template class:
 
 ```cpp
 container_name<class type> :: iterator iter_name
 ```
-[Vectors](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#vector) <br>
-[Lists](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#list) <br>
-[Map](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#map) <br>
-[Algorithms](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#algorithms) <br>
-[The string class](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#string-class) <br>
-[Hashing](https://github.com/Concept-Team/e-box-UTA018/blob/main/Notes/STL/README.md#hashing) <br>
+<hr>
 
-## Vector
+### Contents:
 
+[Vector](#vector) <br>
+[List](#list) <br>
+[Map](#map) <br>
+[Algorithms](#algorithms) <br>
+[The String class](#string) <br>
+[Hashing](#hashing) <br>
+
+<a id="vector">
+	
+# Vector
+	
+</a>
 Till now we have mostly used a static array who's size is fixed at compile time. The vector class supports a dynamic array. This is an array that can grow as needed.
 
 **Syntax:**
@@ -134,7 +153,7 @@ Modified Contents:
 A B C D E F G H I J K L M N O P Q R S T
 ```
 
----
+<br>
 
 **Accessing vector elements using an iterator:**
 
@@ -177,7 +196,7 @@ Original contents:
 a b c d e f g h i j
 ```
 
----
+<br>
 
 **Inserting and deleting elements in a vector:**
 
@@ -261,7 +280,7 @@ Contents after insert:
 a b < V e c t o r > c d e f g h i j
 ```
 
----
+<br>
 
 **Storing Class Objects in a Vector:**
 
@@ -345,10 +364,12 @@ Temperature in Fahrenheit:
 ```
 
 ---
+<a id="list">
 
-## List
+# List
 
-The list class supports a bidirectional, linear list. Unlike a vector, which supports random access, a list can be accessed **sequentially only**. Since lists are bidirectional, they may be accessed front to back or back to front.
+</a>
+The list class supports a bidirectional, linear list. Unlike a vector, which supports random access, a list can be accessed <b>sequentially only</b> . Since lists are bidirectional, they may be accessed front to back or back to front.
 
 **Syntax:**
 
@@ -493,7 +514,7 @@ Sorted contents:
 41 6334 11478 15724 18467 19169 24464 26500 26962 29358
 ```
 
----
+<br>
 
 **Merging one list with other:**
 
@@ -563,15 +584,18 @@ Contents of lst1 after merge:
 
 Notice the use of `empty()` here. It returns a boolean value; `true` when the invoking list is empty, else false. The `merge()` function empties the second list (i.e, the list being merged) which is confirmed by the program output.
 
----
+<br>
 
-**Merging one list with other:**
+**Storing class objects in a list:**
 
  similar to that in vectors
 
 ---
+<a id="map">
 
-## Map
+# Map
+	
+</a>
 
 The map class supports an ***associative container*** in which unique keys are mapped with values. In essence, a key is simply a name that we give to a value. Once a value has been stored, we can retrieve it by using its key. In short, a map is a list of key-value pairs.
 
@@ -590,15 +614,16 @@ map<class key, class value> map_object;
 
 A map has the following constructors:
 
-```cpp
+<pre>
+
 map<int, int> m;                                    // empty map
-map<int, int> m2(m.find(*key1 *), m.find(*key2 *)); // Copying from a range
+map<int, int> m2(m.find(<i>key1</i>), m.find(<i>key2</i>)); // Copying from a range
 map<int, int> m3(m2);                               // copy constructor
 map<int, int> m4{{'a', 1}, {'b', 2}};               // list of pairs
 
 m.insert(pair<char, int>('A', 65));
 m.insert(make_pair((char)'A', 65));
-```
+</pre>
 
 The 4th type of initialisation is supported by Clang 3.6.2 initialiser-list syntax.  
 
@@ -678,8 +703,11 @@ int main()
      ̰ return 0;
 }
 ```
-
-Another interesting thing about maps is that we can use subscripting with map variables to access a value. The content inside [ ] is the key. If `m` is a map variable, `m[key]` will return the value for *key .*  If no such key exists in the map, a default value (i.e. 0) is added for the key passed in the map. So, one should be careful. 
+<br>
+<br>
+Another interesting thing about maps is that we can use subscripting with map variables to access a value. The content inside [ ] is the key. If `m` is a map variable, <code>m[<i>key</i>]</code> will return the value for <i>key</i> .  If no such key exists in the map, a default value (i.e. 0) is added for the key passed in the map. So, one should be careful. 
+<br>
+<br>
 
 ```cpp
 #include <iostream>
@@ -746,7 +774,7 @@ m1[1] = 10
 m2[3] = 30
 ```
 
----
+<br>
 
 **Adding class objects to map:**
 
@@ -819,8 +847,12 @@ int main()
 Enter name: Rachel
 Phone number: 555-0809
 ```
+---
+<a id="algorithms">
 
-## Algorithms
+# Algorithms
+
+</a>
 
 Algorithms act on containers. Although each container provides support for its own basic operations, the standard algorithms provide more extended or complex actions. They also allow us to work with two different types of containers at the same time. To have access to the STL algorithms, we must include `<algorithm>` in your program.
 
@@ -833,8 +865,11 @@ Algorithms act on containers. Although each container provides support for its o
 - `transform(vals.begin(), vals.end(), vals.begin(), func_name)` transforms each element in the range according to the function ***func_name*** which must accept an argument of element's type and return the same type.
 
 ---
+<a id="string">
 
-## String class
+# String class
+
+</a>
 
 > Include `<string>` to use string class.
 
@@ -948,7 +983,12 @@ Thanks to @Rupanshi Jain for the code examples!
 - `end()`
 - `size()`
 
-## Hashing
+---
+<a id="hashing">
+
+# Hashing
+
+</a>
 
 Hashing is a process which takes place internally while the key-value pairs are being binded. 
 
@@ -1020,7 +1060,8 @@ Hash key for boolean false is : 0
 So, hash can be seen more like an operation, rather than a container. It is used in encryption, generally in the field of internet security. 
 
 ---
-
-                                                                         Fin ✌️
+<p align="center">
+Fin ✌️
+</p>
 
 ---
