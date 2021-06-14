@@ -821,9 +821,9 @@ The string class has many advantages over the typical char array. It makes our w
 ```cpp
 #include<string>
 
-string s1;      // empty string object
-string s2("hello!");    // converts a null terminated string into string object
-string s3(s2);    // copy constructor
+string s1;     		 // empty string object
+string s2("hello!");     // converts a null terminated string into string object
+string s3(s2);    	 // copy constructor
 ```
 
 The need of `strcmp()`, `strcpy()`, `strcat()` is replaced by the regular operators in c++, like ==, < = , > = , <, >, ! =, +, =, [ ], to list a few.
@@ -855,13 +855,13 @@ Thanks to @Rupanshi Jain for the code examples!
     str1 = "Hello World! ";
     str2 = "Error found ";
 
-    str1.append(str2);         // Hello World! Error found
+    str1.append(str2);         	// Hello World! Error found
 
-    str1.append(str2, 5);      // Appends 5 characeters from str2 to str1
-    													 // i.e. str1 = "Hello World! Error"
+    str1.append(str2, 5);      	// Appends 5 characeters from str2 to str1
+    				// i.e. str1 = "Hello World! Error"
 
-    str2.append(str1, 0, 5);   // Appends 5 characters from 0th index of str1 to str2
-    													 // i.e. str2 = "Error found Hello"
+    str2.append(str1, 0, 5);   	// Appends 5 characters from 0th index of str1 to str2
+    				// i.e. str2 = "Error found Hello"
 
     str2.append(5, '!');       // Appends 5 occurences of '!' to str2
                                // i.e. str2 = "Error found !!!!!"
@@ -874,10 +874,10 @@ Thanks to @Rupanshi Jain for the code examples!
     str2 = "I am Groot";
 
     str1.insert(6, str2);        // Insert str2 in str1 starting from index 6 of str1
-    													   // i.e. str1 = "Hello I am Groot!"
+    				 // i.e. str1 = "Hello I am Groot!"
 
     str1.insert(6, str2, 5, 4);  // Insert 4 characters from index 5 of str2 at index 6 of str1
-    														 // i.e. str1 = "Hello Groo!"
+    				 // i.e. str1 = "Hello Groo!"
     ```
 
 - `replace()` replaces content of invoking string with string passed in argument, as per the number of characters told to be replaced.
@@ -886,12 +886,12 @@ Thanks to @Rupanshi Jain for the code examples!
     str1 = "Jack and Jill";
     str2 = "Bill";
 
-    str1.replace(0, 4, str2);         // Replace 4 characters from 0th index of str1 with str2
-    														      // i.e. str1 = "Bill and Jill"
+    str1.replace(0, 4, str2);         	// Replace 4 characters from 0th index of str1 with str2
+    					// i.e. str1 = "Bill and Jill"
 
-    str1.replace(5, 3, str2, 1, 3);   // Replace 3 characters from 5th index of str1 with
-    																	// 3 characters from 1st index of str2
-    																	// i.e. str1 = "Jack ill Jill"
+    str1.replace(5, 3, str2, 1, 3);   	// Replace 3 characters from 5th index of str1 with
+    					// 3 characters from 1st index of str2
+    					// i.e. str1 = "Jack ill Jill"
     ```
 
 - `erase()` removes characters from the string
@@ -899,7 +899,7 @@ Thanks to @Rupanshi Jain for the code examples!
     ```cpp
     str1 = "Windows or Linux";
     str1.erase(0, 11);        // Erase 11 characters starting from index 0
-    													// i.e. str1 = "Linux"
+    			      // i.e. str1 = "Linux"
     ```
 
 - `find()`, `rfind()` returns the index at which the match occurs within the invoking string. If no match is found, npos is returned.
