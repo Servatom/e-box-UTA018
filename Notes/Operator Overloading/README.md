@@ -32,8 +32,8 @@ class Complex
 {...}
 
 Complex a,b,c;
-c=a+b;     // Doesn't work as the compiler doesn't know it has 
-//to add real part with real and imaginary part with imaginary
+c=a+b; 	// Doesn't work as the compiler doesn't know it has 
+	//to add real part with real and imaginary part with imaginary
 
 //rather, we used to create member funstions like add(Complex a, Complex b)
 // and do something like c3.add(c1,c2);
@@ -73,9 +73,9 @@ class Complex
 int main()
 {
     Complex c1(3,4);
-    Complex  c2(1,2);
+    Complex c2(1,2);
     Complex c3;
-		c3=c1+c2;           // look how we are using '+' directly with objects
+    c3=c1+c2;           // look how we are using '+' directly with objects
                         // similar to c3=c1.add(c2);
     c3.show();
     return 0;
@@ -118,7 +118,7 @@ int main()
 ## The syntax:
 
 ```cpp
-*return_type* **operator** *operator (type* operand_2){...}
+return_type operator operator (type operand_2){...}
 ```
 
 > *return_type* - can be the class type, void, or any other return type. 
@@ -155,7 +155,7 @@ And in case of binary operator, we need to specify the argument also.
             fraction f2;
             f2.num= num*f.den + den*f.num;
             f2.den= den*f.den;
-    	      int h=hcf(f2.num,f2.den);         // this code reduces the fraction in its standard form
+    	    int h=hcf(f2.num,f2.den);         // this code reduces the fraction in its standard form
             f2.num=f2.num/h;
             f2.den=f2.den/h;
             return f2;
@@ -260,11 +260,11 @@ class weight
     {
         cout<<"Weight in Kg : "<<kg<<endl;
     }
-    void operator ++()          // pre-increment operator overloading. Pre-decrement can be overloaded in a same way
+    void operator ++()      // pre-increment operator overloading. Pre-decrement can be overloaded in a same way
     {
         ++kg;
     }
-    void operator ++(int)       // post-increment operator overloading. Post-decrement can be overloaded in a same way
+    void operator ++(int)   // post-increment operator overloading. Post-decrement can be overloaded in a same way
     {
         kg++;
     }
@@ -309,7 +309,7 @@ obj2= ++obj1;
 obj2.show();
 ```
 
-- **Expand to see the solution**
+- **Solution**
 
     We will get an error as follows:
 
@@ -323,9 +323,9 @@ obj2.show();
     ```cpp
     weight operator ++()
     {
-    		weight temp;
-    		temp.kg=++kg;
-    		return temp;
+	weight temp;
+	temp.kg=++kg;
+	return temp;
     }
     ```
 
@@ -406,46 +406,46 @@ Thus, to actually make the operator work the way it is supposed to work, we must
 #include <iostream>
 using namespace std;
 class loc {
-		int longitude, latitude;
-		public:
-		loc() {}
-		loc(int lg, int lt) {
-				longitude = lg;
-				latitude = lt;
-		}
-		void show() {
-				cout << longitude << " ";
-				cout << latitude << "\n";
-		}
-		friend loc operator++(loc &op);
-		friend loc operator--(loc &op);
+	int longitude, latitude;
+	public:
+	loc() {}
+	loc(int lg, int lt) {
+			longitude = lg;
+			latitude = lt;
+	}
+	void show() {
+			cout << longitude << " ";
+			cout << latitude << "\n";
+	}
+	friend loc operator++(loc &op);
+	friend loc operator--(loc &op);
 };
 
 loc operator++(loc &op)      // ++ overloading using friend function
 {                            // this is pre-increment
-		++op.longitude;
-		++op.latitude;
-		return op;
+	++op.longitude;
+	++op.latitude;
+	return op;
 }
 
 loc operator--(loc &op)      // pre-decrement
 {                            
-		--op.longitude;
-		--op.latitude;
-		return op;
+	--op.longitude;
+	--op.latitude;
+	return op;
 }
 
 int main()
 {
-		loc ob1(10, 20), ob2;
-		ob1.show();  // displays 10 20
-		++ob1;
-		ob1.show();  // displays 11 21
-		ob2 = ++ob1;
-		ob2.show();  // displays 12 22
-		--ob2;
-		ob2.show();  // displays 11 21
-		return 0;
+	loc ob1(10, 20), ob2;
+	ob1.show();  // displays 10 20
+	++ob1;
+	ob1.show();  // displays 11 21
+	ob2 = ++ob1;
+	ob2.show();  // displays 12 22
+	--ob2;
+	ob2.show();  // displays 11 21
+	return 0;
 }
 ```
 
@@ -473,18 +473,18 @@ Since, in case of friend functions, we need to explicitly pass all the operands 
 // + is overloaded for loc + int.
 loc operator+(loc op1, int op2)
 {
-		loc temp;
-		temp.longitude = op1.longitude + op2;
-		temp.latitude = op1.latitude + op2;
-		return temp;
+	loc temp;
+	temp.longitude = op1.longitude + op2;
+	temp.latitude = op1.latitude + op2;
+	return temp;
 }
 // + is overloaded for int + loc.
 loc operator+(int op1, loc op2)
 {
-		loc temp;
-		temp.longitude = op1 + op2.longitude;
-		temp.latitude = op1 + op2.latitude;
-		return temp;
+	loc temp;
+	temp.longitude = op1 + op2.longitude;
+	temp.latitude = op1 + op2.latitude;
+	return temp;
 }
 ```
 
@@ -498,7 +498,7 @@ be non-static member functions. They cannot be **friends.**
 ### Overloading [ ]
 
 ```cpp
-*type* class_name::operator[](int i)     // i is the index of the element which we want to access
+type class_name::operator[](int i)     // i is the index of the element which we want to access
 {
 // . . .
 }
@@ -510,21 +510,21 @@ When we have an array as a member (say, *arr*) of a class and we want to access 
 #include <iostream>
 using namespace std;
 class atype {
-		int a[3];
-		public:
-			atype(int i, int j, int k) 
-			{
-					a[0] = i;
-					a[1] = j;
-					a[2] = k;
-			}
-		int operator[](int i) { return a[i]; }
+	int a[3];
+	public:
+		atype(int i, int j, int k) 
+		{
+				a[0] = i;
+				a[1] = j;
+				a[2] = k;
+		}
+	int operator[](int i) { return a[i]; }
 };
 int main()
 {
-		atype ob(1, 2, 3);
-		cout << ob[1]; // displays 2
-		return 0;
+	atype ob(1, 2, 3);
+	cout << ob[1]; // displays 2
+	return 0;
 }
 ```
 
@@ -534,24 +534,24 @@ We can design the operator [](notion://www.notion.so/Operator-Overloading-c3a361
 #include <iostream>
 using namespace std;
 class atype {
-		int a[3];
-		public:
-			atype(int i, int j, int k) 
-			{
-					a[0] = i;
-					a[1] = j;
-					a[2] = k;
-			}
-			int &operator[](int i) { return a[i]; }
+	int a[3];
+	public:
+	atype(int i, int j, int k) 
+	{
+		a[0] = i;
+		a[1] = j;
+		a[2] = k;
+	}
+	int &operator[](int i) { return a[i]; }
 };
 int main()
 {
-		atype ob(1, 2, 3);
-		cout << ob[1]; // displays 2
-		cout << " ";
-		ob[1] = 25; // [] on left of =
-		cout << ob[1]; // now displays 25
-		return 0;
+	atype ob(1, 2, 3);
+	cout << ob[1]; // displays 2
+	cout << " ";
+	ob[1] = 25; // [] on left of =
+	cout << ob[1]; // now displays 25
+	return 0;
 }
 ```
 
@@ -563,48 +563,48 @@ We can pass any arbitrary number of arguments in this overloaded operator functi
 #include <iostream>
 using namespace std;
 class loc {
-		int longitude, latitude;
-		public:
-		loc() {}
-		loc(int lg, int lt) 
-		{
-				longitude = lg;
-				latitude = lt;
-		}
-		void show() 
-		{
-				cout << longitude << " ";
-				cout << latitude << "\n";
-		}
-		loc operator+(loc op2);
-		loc operator()(int i, int j);
+	int longitude, latitude;
+	public:
+	loc() {}
+	loc(int lg, int lt) 
+	{
+		longitude = lg;
+		latitude = lt;
+	}
+	void show() 
+	{
+		cout << longitude << " ";
+		cout << latitude << "\n";
+	}
+	loc operator+(loc op2);
+	loc operator()(int i, int j);
 };
 
 // Overload ( ) for loc.
 loc loc::operator()(int i, int j)
 {
-		longitude = i;
-		latitude = j;
-		return *this;
+	longitude = i;
+	latitude = j;
+	return *this;
 }
 
 // Overload + for loc.
 loc loc::operator+(loc op2)
 {
-		loc temp;
-		temp.longitude = op2.longitude + longitude;
-		temp.latitude = op2.latitude + latitude;
-		return temp;
+	loc temp;
+	temp.longitude = op2.longitude + longitude;
+	temp.latitude = op2.latitude + latitude;
+	return temp;
 }
 int main()
 {
-		loc ob1(10, 20), ob2(1, 1);
-		ob1.show();
-		ob1(7, 8);      // can be executed by itself
-		ob1.show();
-		ob1 = ob2 + ob1(10, 10);      // can be used in expressions
-		ob1.show();
-		return 0;
+	loc ob1(10, 20), ob2(1, 1);
+	ob1.show();
+	ob1(7, 8);      // can be executed by itself
+	ob1.show();
+	ob1 = ob2 + ob1(10, 10);     // can be used in expressions
+	ob1.show();
+	return 0;
 }
 ```
 
@@ -630,19 +630,19 @@ The operator–>( ) function must return a pointer to an object of the class tha
 #include <iostream>
 using namespace std;
 class myclass {
-		public:
-		int i;
-		myclass *operator->()    
-		{
-				return this;         // very simple definition
-		}
+	public:
+	int i;
+	myclass *operator->()    
+	{
+		return this;         // very simple definition
+	}
 };
 int main()
 {
-		myclass ob;
-		ob->i = 10;       // same as ob.i
-		cout << ob.i << " " << ob->i;
-		return 0;
+	myclass ob;
+	ob->i = 10;       // same as ob.i
+	cout << ob.i << " " << ob->i;
+	return 0;
 }
 ```
 
