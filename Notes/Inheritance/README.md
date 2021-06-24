@@ -48,7 +48,7 @@ int main()
    ob.set(1, 2); // access member of base
    ob.show(); // access member of base
    ob.showk(); // uses member of derived class
-	return 0; 
+   return 0;
 }
 ```
 ## Types of Inheritance:
@@ -109,7 +109,7 @@ Syntax:
 ```cpp
 class derived-class-name : access baseclass-name, access baseclass-name { 
 	// body of class
-};*
+};
 ```
 
 Constructors and destructors in multiple inheritance:
@@ -157,7 +157,7 @@ Syntax:
 
 ```cpp
 derived-constructor(arg-list) : base1(arg-list), base2(arg-list),
-																// ... baseN(arg-list)
+					// ... baseN(arg-list)
 {
 // body of derived constructor
 }
@@ -198,11 +198,11 @@ class base { i };
 class derived1: virtual public base {  } // i
 class derived2: virtual public base {  } // i
 
-class derived3: public derived1, public derived2 {  } // i       only one copy created
+class derived3: public derived1, public derived2 {  } // i   only one copy created
 
 derived ob;
-ob.i = 3; // this is unambiguous
+ob.i = 3;  	// this is unambiguous
 
 derived1 ob2;
-ob2.i = 88; // this works perfectly fine cause individual copies are maintained
+ob2.i = 88;	// this works perfectly fine cause individual copies are maintained
 ```
