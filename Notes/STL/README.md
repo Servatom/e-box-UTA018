@@ -614,16 +614,16 @@ map<class key, class value> map_object;
 
 A map has the following constructors:
 
-<pre>
+```cpp
 
-map<int, int> m;                                    // empty map
-map<int, int> m2(m.find(<i>key1</i>), m.find(<i>key2</i>)); // Copying from a range
-map<int, int> m3(m2);                               // copy constructor
-map<int, int> m4{{'a', 1}, {'b', 2}};               // list of pairs
+map<int, int> m;                                    	    	// empty map
+map<int, int> m2(m.find(<i>key1</i>), m.find(<i>key2</i>)); 	// Copying from a range
+map<int, int> m3(m2);                               		// copy constructor
+map<int, int> m4{{'a', 1}, {'b', 2}};               		// list of pairs
 
 m.insert(pair<char, int>('A', 65));
 m.insert(make_pair((char)'A', 65));
-</pre>
+```
 
 The 4th type of initialisation is supported by Clang 3.6.2 initialiser-list syntax.  
 
@@ -932,10 +932,10 @@ Thanks to @Rupanshi Jain for the code examples!
     str1 = "Hello !";
     str2 = "I am Groot";
 
-    str1.insert(6, str2);       // Insert str2 in str1 starting from index 6 of str1
+    str1.insert(6, str2);		// Insert str2 in str1 starting from index 6 of str1
     				// i.e. str1 = "Hello I am Groot!"
 
-    str1.insert(6, str2, 5, 4); // Insert 4 characters from index 5 of str2 at index 6 of str1
+    str1.insert(6, str2, 5, 4);	// Insert 4 characters from index 5 of str2 at index 6 of str1
     				// i.e. str1 = "Hello Groo!"
     ```
 
