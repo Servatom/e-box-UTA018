@@ -50,7 +50,7 @@ OUTPUT
 // Load this header to access I/O classes and functions
 #include <fstream>
 
-															/* FILE OUTPUT */
+					/* FILE OUTPUT */
 
 // Opening a file
 ofstream out("myfile.txt");
@@ -66,7 +66,7 @@ out << "Radios " << 39.95 << endl;
 out << "Toasters " << 19.95 << endl;
 out << "Mixers " << 24.80 << endl;
 
-															/* FILE INPUT */
+					/* FILE INPUT */
 // Opening a file
 ifstream in("myfile.txt");
 
