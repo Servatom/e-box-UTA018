@@ -68,10 +68,10 @@ template <class X>
 int i; // this is an error
 void swapargs(X &a, X &b)
 {
-		X temp;
-		temp = a;
-		a = b;
-		b = temp;
+	X temp;
+	temp = a;
+	a = b;
+	b = temp;
 }
 ```
 
@@ -133,26 +133,26 @@ int main()
     // This is a function template.
     template <class X> void swapargs(X &a, X &b)
     {
-    		X temp;
-    		temp = a;
-    		a = b;
-    		b = temp;
+	X temp;
+	temp = a;
+	a = b;
+	b = temp;
     }
     int main()
     {
-    		int i=10, j=20;
-    		double x=10.1, y=23.3;
-    		char a='x', b='z';
-    		cout << "Original i, j: " << i << ' ' << j << '\n';
-    		cout << "Original x, y: " << x << ' ' << y << '\n';
-    		cout << "Original a, b: " << a << ' ' << b << '\n';
-    		swapargs(i, j); // swap integers
-    		swapargs(x, y); // swap floats
-    		swapargs(a, b); // swap chars
-    		cout << "Swapped i, j: " << i << ' ' << j << '\n';
-    		cout << "Swapped x, y: " << x << ' ' << y << '\n';
-    		cout << "Swapped a, b: " << a << ' ' << b << '\n';
-    		return 0;
+	int i=10, j=20;
+	double x=10.1, y=23.3;
+	char a='x', b='z';
+	cout << "Original i, j: " << i << ' ' << j << '\n';
+	cout << "Original x, y: " << x << ' ' << y << '\n';
+	cout << "Original a, b: " << a << ' ' << b << '\n';
+	swapargs(i, j); // swap integers
+	swapargs(x, y); // swap floats
+	swapargs(a, b); // swap chars
+	cout << "Swapped i, j: " << i << ' ' << j << '\n';
+	cout << "Swapped x, y: " << x << ' ' << y << '\n';
+	cout << "Swapped a, b: " << a << ' ' << b << '\n';
+	return 0;
     }
     ```
 
@@ -175,36 +175,36 @@ swapping example shown earlier.
 using namespace std;
 template <class X> void swapargs(X &a, X &b)
 {
-		X temp;
-		temp = a;
-		a = b;
-		b = temp;
-		cout << "Inside template swapargs.\n";
+	X temp;
+	temp = a;
+	a = b;
+	b = temp;
+	cout << "Inside template swapargs.\n";
 }
 // This overrides the generic version of swapargs() for ints.
 void swapargs(int &a, int &b)
 {
-		int temp;
-		temp = a;
-		a = b;
-		b = temp;
-		cout << "Inside swapargs int specialization.\n";
+	int temp;
+	temp = a;
+	a = b;
+	b = temp;
+	cout << "Inside swapargs int specialization.\n";
 }
 int main()
 {
-		int i=10, j=20;
-		double x=10.1, y=23.3;
-		char a='x', b='z';
-		cout << "Original i, j: " << i << ' ' << j << '\n';
-		cout << "Original x, y: " << x << ' ' << y << '\n';
-		cout << "Original a, b: " << a << ' ' << b << '\n';
-		swapargs(i, j); // calls explicitly overloaded swapargs()
-		swapargs(x, y); // calls generic swapargs()
-		swapargs(a, b); // calls generic swapargs()
-		cout << "Swapped i, j: " << i << ' ' << j << '\n';
-		cout << "Swapped x, y: " << x << ' ' << y << '\n';
-		cout << "Swapped a, b: " << a << ' ' << b << '\n';
-		return 0;
+	int i=10, j=20;
+	double x=10.1, y=23.3;
+	char a='x', b='z';
+	cout << "Original i, j: " << i << ' ' << j << '\n';
+	cout << "Original x, y: " << x << ' ' << y << '\n';
+	cout << "Original a, b: " << a << ' ' << b << '\n';
+	swapargs(i, j); // calls explicitly overloaded swapargs()
+	swapargs(x, y); // calls generic swapargs()
+	swapargs(a, b); // calls generic swapargs()
+	cout << "Swapped i, j: " << i << ' ' << j << '\n';
+	cout << "Swapped x, y: " << x << ' ' << y << '\n';
+	cout << "Swapped a, b: " << a << ' ' << b << '\n';
+	return 0;
 }
 ```
 
@@ -233,11 +233,11 @@ the generic function is overridden by the explicit overloading.
 // Use new-style specialization syntax.
 template<> void swapargs<int>(int &a, int &b)     //notice <int> 
 {
-		int temp;
-		temp = a;
-		a = b;
-		b = temp;
-		cout << "Inside swapargs int specialization.\n";
+	int temp;
+	temp = a;
+	a = b;
+	b = temp;
+	cout << "Inside swapargs int specialization.\n";
 }
 ```
 
@@ -251,19 +251,19 @@ using namespace std;
 // First version of f() template.
 template <class X> void f(X a)
 {
-		cout << "Inside f(X a)\n";
+	cout << "Inside f(X a)\n";
 }
 
 // Second version of f() template.
 template <class X, class Y> void f(X a, Y b)
 {
-		cout << "Inside f(X a, Y b)\n";
+	cout << "Inside f(X a, Y b)\n";
 }
 int main()
 {
-		f(10); // calls f(X)
-		f(10, 20); // calls f(X, Y)
-		return 0;
+	f(10); 	// calls f(X)
+	f(10, 20); // calls f(X, Y)
+	return 0;
 }
 ```
 
@@ -278,17 +278,17 @@ Though templates provide us with the flexibility of data types passed in the fun
     X *items, // pointer to array to be sorted
     int count) // number of items in array
     {
-    		register int a, b;
-    		X t;
-    		for(a=1; a<count; a++)
-    		for(b=count-1; b>=a; b--)
-    		if(items[b-1] > items[b]) 
-    		{
-    				// exchange elements
-    				t = items[b-1];
-    				items[b-1] = items[b];
-    				items[b] = t;
-    		}
+	register int a, b;
+	X t;
+	for(a=1; a<count; a++)
+	for(b=count-1; b>=a; b--)
+	if(items[b-1] > items[b]) 
+	{
+		// exchange elements
+		t = items[b-1];
+		items[b-1] = items[b];
+		items[b] = t;
+	}
     }
     ```
 
@@ -301,12 +301,12 @@ Though templates provide us with the flexibility of data types passed in the fun
     int start, // starting index of compacted region
     int end) // ending index of compacted region
     {
-    		register int i;
-    		for(i=end+1; i<count; i++, start++)
-    		items[start] = items[i];
-    		/* For the sake of illustration, the remainder of
-    		the array will be zeroed. */
-    		for( ; start<count; start++) items[start] = (X) 0;
+	register int i;
+	for(i=end+1; i<count; i++, start++)
+	items[start] = items[i];
+	/* For the sake of illustration, the remainder of
+	the array will be zeroed. */
+	for( ; start<count; start++) items[start] = (X) 0;
     }
     ```
 
@@ -352,62 +352,62 @@ const int SIZE = 10;
 template <class StackType> 
 class stack 
 {
-		StackType stck[SIZE]; // holds the stack
-		int tos;              // index of top-of-stack
-		public:
-		stack() { tos = 0; }      // initialize stack
+	StackType stck[SIZE]; // holds the stack
+	int tos;              // index of top-of-stack
+	public:
+	stack() { tos = 0; }      // initialize stack
 
-		void push(StackType ob); // push object on stack
-		StackType pop();         // pop object from stack
+	void push(StackType ob); // push object on stack
+	StackType pop();         // pop object from stack
 };
 
 // Push an object.
 template <class StackType> void stack<StackType>::push(StackType ob)
 {
-		if(tos==SIZE) {
-				cout << "Stack is full.\n";
-				return;
-		}
-		stck[tos] = ob;
-		tos++;
+	if(tos==SIZE) {
+		cout << "Stack is full.\n";
+		return;
+	}
+	stck[tos] = ob;
+	tos++;
 }
 
 // Pop an object.
 template <class StackType> StackType stack<StackType>::pop()
 {
-		if(tos==0) {
-				cout << "Stack is empty.\n";
-				return 0; // return null on empty stack
-		}
-		tos--;
-		return stck[tos];
+	if(tos==0) {
+		cout << "Stack is empty.\n";
+		return 0; // return null on empty stack
+	}
+	tos--;
+	return stck[tos];
 }
 
 int main()
 {
-		// Demonstrate character stacks.
-		stack<char> s1, s2; // create two character stacks
-		int i;
-		s1.push('a');
-		s2.push('x');
-		s1.push('b');
-		s2.push('y');
-		s1.push('c');
-		s2.push('z');
-		for(i=0; i<3; i++) cout << "Pop s1: " << s1.pop() << "\n";
-		for(i=0; i<3; i++) cout << "Pop s2: " << s2.pop() << "\n";
+	// Demonstrate character stacks.
+	stack<char> s1, s2; // create two character stacks
+	int i;
+	s1.push('a');
+	s2.push('x');
+	s1.push('b');
+	s2.push('y');
+	s1.push('c');
+	s2.push('z');
+	for(i=0; i<3; i++) cout << "Pop s1: " << s1.pop() << "\n";
+	for(i=0; i<3; i++) cout << "Pop s2: " << s2.pop() << "\n";
 
-		// demonstrate double stacks
-		stack<double> ds1, ds2; // create two double stacks
-		ds1.push(1.1);
-		ds2.push(2.2);
-		ds1.push(3.3);
-		ds2.push(4.4);
-		ds1.push(5.5);
-		ds2.push(6.6);
-		for(i=0; i<3; i++) cout << "Pop ds1: " << ds1.pop() << "\n";
-		for(i=0; i<3; i++) cout << "Pop ds2: " << ds2.pop() << "\n";
-		return 0;
+	// demonstrate double stacks
+	stack<double> ds1, ds2; // create two double stacks
+	ds1.push(1.1);
+	ds2.push(2.2);
+	ds1.push(3.3);
+	ds2.push(4.4);
+	ds1.push(5.5);
+	ds2.push(6.6);
+	for(i=0; i<3; i++) cout << "Pop ds1: " << ds1.pop() << "\n";
+	for(i=0; i<3; i++) cout << "Pop ds2: " << ds2.pop() << "\n";
+	return 0;
 }
 ```
 
@@ -435,11 +435,11 @@ We can also pass user define datatypes inside angular brackets, thus forming a s
 ```cpp
 struct addr 
 {
-		char name[40];
-		char street[40];
-		char city[30];
-		char state[3];
-		char zip[12];
+	char name[40];
+	char street[40];
+	char city[30];
+	char state[3];
+	char zip[12];
 };
 ```
 
@@ -460,19 +460,19 @@ Eg:
 using namespace std;
 template <class Type1, class Type2> class myclass
 {
-		Type1 i;
-		Type2 j;
-		public:
-		myclass(Type1 a, Type2 b) { i = a; j = b; }
-		void show() { cout << i << ' ' << j << '\n'; }
+	Type1 i;
+	Type2 j;
+	public:
+	myclass(Type1 a, Type2 b) { i = a; j = b; }
+	void show() { cout << i << ' ' << j << '\n'; }
 };
 int main()
 {
-		myclass<int, double> ob1(10, 0.23);
-		myclass<char, char *> ob2('X', "Templates add power.");
-		ob1.show(); // show int, double
-		ob2.show(); // show char, char *
-		return 0;
+	myclass<int, double> ob1(10, 0.23);
+	myclass<char, char *> ob2('X', "Templates add power.");
+	ob1.show(); // show int, double
+	ob2.show(); // show char, char *
+	return 0;
 }
 ```
 
@@ -552,49 +552,49 @@ using namespace std;
 // Here, AType defaults to int and size defaults to 10.
 template <class AType=int, int size=10> 
 class atype {
-			AType a[size]; // size of array is passed in size
-			public:
-			atype() {
-					register int i;
-					for(i=0; i<size; i++) a[i] = i;
-			}
-			AType &operator[](int i);
+	AType a[size]; // size of array is passed in size
+	public:
+	atype() {
+		register int i;
+		for(i=0; i<size; i++) a[i] = i;
+	}
+	AType &operator[](int i);
 };
 
 // Provide range checking for atype.
 template <class AType, int size>
 AType &atype<AType, size>::operator[](int i)
-		{
-		if(i<0 || i> size-1) {
-				cout << "\nIndex value of ";
-				cout << i << " is out-of-bounds.\n";
-				exit(1);
-		}
-		return a[i];
+{
+	if(i<0 || i> size-1) {
+		cout << "\nIndex value of ";
+		cout << i << " is out-of-bounds.\n";
+		exit(1);
+	}
+	return a[i];
 }
 
 int main()
 {
-			atype<int, 100> intarray; // integer array, size 100
-			
-			atype<double> doublearray; // double array, default size
-			
-			atype<> defarray; // default to int array of size 10
+	atype<int, 100> intarray; // integer array, size 100
 
-			int i;
-			cout << "int array: ";
-			for(i=0; i<100; i++) intarray[i] = i;
-			for(i=0; i<100; i++) cout << intarray[i] << " ";
-			cout << '\n';
-			cout << "double array: ";
-			for(i=0; i<10; i++) doublearray[i] = (double) i/3;
-			for(i=0; i<10; i++) cout << doublearray[i] << " ";
-			cout << '\n';
-			cout << "defarray array: ";
-			for(i=0; i<10; i++) defarray[i] = i;
-			for(i=0; i<10; i++) cout << defarray[i] << " ";
-			cout << '\n';
-			return 0;
+	atype<double> doublearray; // double array, default size
+
+	atype<> defarray; // default to int array of size 10
+
+	int i;
+	cout << "int array: ";
+	for(i=0; i<100; i++) intarray[i] = i;
+	for(i=0; i<100; i++) cout << intarray[i] << " ";
+	cout << '\n';
+	cout << "double array: ";
+	for(i=0; i<10; i++) doublearray[i] = (double) i/3;
+	for(i=0; i<10; i++) cout << doublearray[i] << " ";
+	cout << '\n';
+	cout << "defarray array: ";
+	for(i=0; i<10; i++) defarray[i] = i;
+	for(i=0; i<10; i++) cout << defarray[i] << " ";
+	cout << '\n';
+	return 0;
 }
 ```
 
