@@ -3,6 +3,13 @@
 
 using namespace std;
 
+void printForEach(map<int, int> m1){
+    for(auto s: m1){
+        cout<<s.first<<" "<<s.second<<endl; //S is the object of the "PAIR" of the m1
+        //use g++ Vector.cpp -std=c++11 for this
+    }
+}
+
 void print(map<int, int> m1){
     map<int, int>::iterator it;
     for(it = m1.begin(); it != m1.end(); it++){
