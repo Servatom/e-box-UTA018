@@ -52,5 +52,12 @@ int main(){
     list<int> someList(hello, hello+4);
 
     //But changes in list1 wont replicate changes to list3
+
+
+    //For each loop => for each element in container someList (here)
+    for(auto s: someList){
+        cout<<s<<endl;
+    }
+
     return 0;
 }

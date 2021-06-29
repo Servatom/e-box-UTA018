@@ -50,5 +50,10 @@ int main(){
     vector<char>v(10);
     vector<char>cv(5,'x');
 
+    //For each loop => for each element in container v (here)
+    for(auto s: v){
+        cout<<s<<endl;
+    }
+
     return 0;
 }
